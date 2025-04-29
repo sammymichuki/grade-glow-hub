@@ -58,12 +58,12 @@ const recommendedCourses = [
   }
 ];
 
-// Sample activity data
+// Sample activity data - fixing the type property to use the correct union type
 const recentActivity = [
-  { id: 1, type: 'completed', course: 'Algebra Fundamentals', lesson: 'Working with Variables', date: '2 days ago' },
-  { id: 2, type: 'started', course: 'Biology: Cells & Systems', lesson: 'Cell Division', date: '3 days ago' },
-  { id: 3, type: 'enrolled', course: 'Essay Writing Skills', lesson: '', date: '1 week ago' },
-  { id: 4, type: 'completed', course: 'Algebra Fundamentals', lesson: 'Introduction to Algebra', date: '1 week ago' }
+  { id: 1, type: 'completed' as const, course: 'Algebra Fundamentals', lesson: 'Working with Variables', date: '2 days ago' },
+  { id: 2, type: 'started' as const, course: 'Biology: Cells & Systems', lesson: 'Cell Division', date: '3 days ago' },
+  { id: 3, type: 'enrolled' as const, course: 'Essay Writing Skills', lesson: '', date: '1 week ago' },
+  { id: 4, type: 'completed' as const, course: 'Algebra Fundamentals', lesson: 'Introduction to Algebra', date: '1 week ago' }
 ];
 
 const Dashboard = () => {
