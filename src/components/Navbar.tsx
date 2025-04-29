@@ -1,15 +1,22 @@
 
 import { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { Button } from "@/components/ui/button";
 import { Menu, X, BookOpen } from "lucide-react";
+import { useAuth } from '../contexts/AuthContext';
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [isLoggedIn, setIsLoggedIn] = useState(false); // This would be handled by auth context in a real app
+  const { isLoggedIn, logout } = useAuth();
+  const navigate = useNavigate();
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
+  };
+
+  const handleLogout = () => {
+    logout();
+    navigate('/');
   };
 
   return (
@@ -40,7 +47,7 @@ const Navbar = () => {
                 <Link to="/dashboard">
                   <Button variant="outline">Dashboard</Button>
                 </Link>
-                <Button onClick={() => setIsLoggedIn(false)}>Logout</Button>
+                <Button onClick={handleLogout}>Logout</Button>
               </div>
             ) : (
               <div className="flex space-x-2">
@@ -96,7 +103,7 @@ const Navbar = () => {
                   <Button 
                     className="w-full" 
                     onClick={() => {
-                      setIsLoggedIn(false);
+                      handleLogout();
                       toggleMenu();
                     }}
                   >

@@ -9,9 +9,11 @@ import { BookOpen } from "lucide-react";
 import { toast } from "sonner";
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
+import { useAuth } from '../contexts/AuthContext';
 
 const Login = () => {
   const navigate = useNavigate();
+  const { login } = useAuth();
   const [formData, setFormData] = useState({
     email: '',
     password: ''
@@ -26,18 +28,19 @@ const Login = () => {
     }));
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsLoading(true);
     
-    // Simulated login - in a real app, this would call an auth API
-    setTimeout(() => {
-      setIsLoading(false);
-      // For demo purposes, any login succeeds
-      localStorage.setItem('isLoggedIn', 'true');
+    try {
+      await login(formData.email, formData.password);
       toast.success("Successfully logged in!");
       navigate('/dashboard');
-    }, 1000);
+    } catch (error) {
+      toast.error("Failed to login. Please check your credentials.");
+    } finally {
+      setIsLoading(false);
+    }
   };
 
   return (

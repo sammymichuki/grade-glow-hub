@@ -9,9 +9,11 @@ import { BookOpen } from "lucide-react";
 import { toast } from "sonner";
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
+import { useAuth } from '../contexts/AuthContext';
 
 const Register = () => {
   const navigate = useNavigate();
+  const { login } = useAuth();
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -28,7 +30,7 @@ const Register = () => {
     }));
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     
     if (formData.password !== formData.confirmPassword) {
@@ -38,14 +40,22 @@ const Register = () => {
 
     setIsLoading(true);
     
-    // Simulated registration - in a real app, this would call an auth API
-    setTimeout(() => {
-      setIsLoading(false);
-      // For demo purposes, registration always succeeds
-      localStorage.setItem('isLoggedIn', 'true');
+    try {
+      // In a real app, we'd call an API to register
+      // For now, we'll just store the login state
+      localStorage.setItem('userName', formData.name);
+      localStorage.setItem('userEmail', formData.email);
+      
+      // Then login the user
+      await login(formData.email, formData.password);
+      
       toast.success("Account created successfully!");
       navigate('/dashboard');
-    }, 1000);
+    } catch (error) {
+      toast.error("Failed to create account");
+    } finally {
+      setIsLoading(false);
+    }
   };
 
   return (
