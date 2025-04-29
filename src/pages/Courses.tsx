@@ -206,7 +206,7 @@ const Courses = () => {
                   <SelectValue placeholder="All Subjects" />
                 </SelectTrigger>
                 <SelectContent>
-                  <SelectItem value="">All Subjects</SelectItem>
+                  <SelectItem value="all-subjects">All Subjects</SelectItem>
                   {subjects.map(subject => (
                     <SelectItem key={subject} value={subject.toLowerCase()}>
                       {subject}
@@ -222,7 +222,7 @@ const Courses = () => {
                   <SelectValue placeholder="All Levels" />
                 </SelectTrigger>
                 <SelectContent>
-                  <SelectItem value="">All Levels</SelectItem>
+                  <SelectItem value="all-levels">All Levels</SelectItem>
                   {levels.map(level => (
                     <SelectItem key={level} value={level}>
                       {level}
