@@ -6,12 +6,14 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { AuthProvider } from "./contexts/AuthContext";
 
+
 // Pages
 import Index from "./pages/Index";
 import Login from "./pages/Login";
 import Register from "./pages/Register";
 import Courses from "./pages/Courses";
 import CourseView from "./pages/CourseView";
+import LessonView from './pages/LessonView';
 import Dashboard from "./pages/Dashboard";
 import About from "./pages/About";
 import NotFound from "./pages/NotFound";
@@ -31,6 +33,7 @@ const App = () => (
             <Route path="/register" element={<Register />} />
             <Route path="/courses" element={<Courses />} />
             <Route path="/course/:courseId" element={<CourseView />} />
+            <Route path="/course/:courseId/lessons/:lessonId" element={<LessonView />} />
             <Route path="/dashboard" element={<Dashboard />} />
             <Route path="/about" element={<About />} />
             <Route path="*" element={<NotFound />} />

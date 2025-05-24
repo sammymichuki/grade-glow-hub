@@ -21,8 +21,8 @@ const HeroSection = () => {
                 </Button>
               </Link>
               <Link to="/register">
-                <Button size="lg" variant="outline" className="border-white text-white hover:bg-white/10">
-                  Sign Up Free
+                <Button size="lg" variant="outline" className="border-white text-black hover:bg-white/10">
+                  Sign Up For Free 
                 </Button>
               </Link>
             </div>

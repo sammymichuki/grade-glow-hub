@@ -18,7 +18,7 @@ import StudyReminders from '../components/dashboard/StudyReminders';
 const enrolledCourses = [
   {
     id: 1,
-    title: 'Algebra Fundamentals',
+    title: 'Mathematics Fundamentals',
     subject: 'Mathematics',
     image: 'https://images.unsplash.com/photo-1635070041078-e363dbe005cb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80',
     progress: 75,
@@ -60,10 +60,10 @@ const recommendedCourses = [
 
 // Sample activity data - fixing the type property to use the correct union type
 const recentActivity = [
-  { id: 1, type: 'completed' as const, course: 'Algebra Fundamentals', lesson: 'Working with Variables', date: '2 days ago' },
+  { id: 1, type: 'completed' as const, course: 'mathematics Fundamentals', lesson: 'Working with Variables', date: '2 days ago' },
   { id: 2, type: 'started' as const, course: 'Biology: Cells & Systems', lesson: 'Cell Division', date: '3 days ago' },
   { id: 3, type: 'enrolled' as const, course: 'Essay Writing Skills', lesson: '', date: '1 week ago' },
-  { id: 4, type: 'completed' as const, course: 'Algebra Fundamentals', lesson: 'Introduction to Algebra', date: '1 week ago' }
+  { id: 4, type: 'completed' as const, course: 'Mathematics Fundamentals', lesson: 'Introduction to Algebra', date: '1 week ago' }
 ];
 
 const Dashboard = () => {

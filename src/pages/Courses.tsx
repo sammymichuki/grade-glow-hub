@@ -12,20 +12,20 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@
 const allCourses: CourseProps[] = [
   {
     id: 1,
-    title: 'Algebra Fundamentals',
+    title: 'Mathematics Fundamentals',
     subject: 'Mathematics',
-    description: 'Master the foundations of algebra with interactive lessons and practice problems.',
+    description: 'Master the foundations of all Mathematics formulars from finding area to solving linear inequalities and all the other mathematical problems.',
     image: 'https://images.unsplash.com/photo-1635070041078-e363dbe005cb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80',
     level: 'Beginner',
-    lessonCount: 12
+    lessonCount: 15
   },
   {
     id: 2,
-    title: 'Biology: Cells & Systems',
-    subject: 'Science',
+    title: 'Biology,Physics and Chemistry Basics',
+    subject: 'Intergrated Science',
     description: 'Explore the fascinating world of cells, organisms, and biological systems.',
     image: 'https://images.unsplash.com/photo-1579154341088-3e03c82fced8?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80',
-    level: 'Intermediate',
+    level: 'Beginner',
     lessonCount: 15
   },
   {
@@ -39,27 +39,27 @@ const allCourses: CourseProps[] = [
   },
   {
     id: 4,
-    title: 'Chemistry Basics',
-    subject: 'Science',
-    description: 'Learn the fundamental concepts of chemistry through engaging experiments and lessons.',
+    title: 'Distinction Social Studies',
+    subject: 'Social Studies',
+    description: 'Explore the fascinating world of the Ancient History, Community Service and the Natural Environments in Africa',
     image: 'https://images.unsplash.com/photo-1603126857599-f6e157fa2fe6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80',
     level: 'Beginner',
     lessonCount: 14
   },
   {
     id: 5,
-    title: 'World Geography',
-    subject: 'Geography',
-    description: 'Explore countries, cultures, and geographical features around the world.',
+    title: 'Agriculture and Nutrition Fundamentals',
+    subject: 'Agrinutrition',
+    description: 'Learn the Basics of Agriculture and Nutrition.Gain Knowledge on how to stay and eat healthy foods.Master Planting,weeding,pruning and harvesting of crops.',
     image: 'https://images.unsplash.com/photo-1524661135-423995f22d0b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80',
     level: 'Intermediate',
     lessonCount: 18
   },
   {
     id: 6,
-    title: 'Ancient Civilizations',
-    subject: 'History',
-    description: 'Dive into the fascinating history of ancient Egypt, Greece, Rome, and more.',
+    title: 'Pre-technical Studies and Entreprenuership Skills',
+    subject: 'Pre-Technical Studies',
+    description: 'Master Entrepreneurial Skills,The foundation of Pre-Technical Studies ,Materials For Production and Many more.',
     image: 'https://images.unsplash.com/photo-1608415295464-f26297ecdac4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80',
     level: 'Intermediate',
     lessonCount: 16
@@ -75,18 +75,18 @@ const allCourses: CourseProps[] = [
   },
   {
     id: 8,
-    title: 'Geometry Essentials',
-    subject: 'Mathematics',
-    description: 'Master the fundamental concepts of geometry with interactive lessons.',
+    title: 'Creative Arts and Sports',
+    subject: 'Creative Arts',
+    description: 'Master the art of Creativity and the various sports we offer. ',
     image: 'https://images.unsplash.com/photo-1509228468518-180dd4864904?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80',
     level: 'Intermediate',
     lessonCount: 15
   },
   {
     id: 9,
-    title: 'Grammar Fundamentals',
-    subject: 'English',
-    description: 'Strengthen your grammar skills with comprehensive lessons and exercises.',
+    title: 'Kiswahili Fundamentals',
+    subject: 'Kiswahili',
+    description: 'Strengthen your Kiswahili skills with comprehensive lessons and exercises.',
     image: 'https://images.unsplash.com/photo-1503676260728-1c00da094a0b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80',
     level: 'Beginner',
     lessonCount: 10

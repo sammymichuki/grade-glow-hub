@@ -1,4 +1,3 @@
-
 import { useState, useEffect } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import Navbar from '../components/Navbar';
@@ -14,42 +13,122 @@ import { toast } from 'sonner';
 const allCourses: CourseProps[] = [
   {
     id: 1,
-    title: 'Algebra Fundamentals',
+    title: 'Mathematics Fundamentals',
     subject: 'Mathematics',
-    description: 'Master the foundations of algebra with interactive lessons and practice problems. This course covers essential concepts like variables, expressions, equations, and functions. Perfect for students looking to build a strong foundation in algebra.',
+    description: 'Master the foundations of all Mathematics formulars from finding area to solving linear inequalities and all the other mathematical problems',
     image: 'https://images.unsplash.com/photo-1635070041078-e363dbe005cb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80',
     level: 'Beginner',
-    lessonCount: 12
+    lessonCount: 15
   },
   {
     id: 2,
-    title: 'Biology: Cells & Systems',
-    subject: 'Science',
-    description: 'Explore the fascinating world of cells, organisms, and biological systems. From cell structure to organ systems, this comprehensive course provides a solid understanding of key biology concepts for grade 9 students.',
+    title: 'Biology,Physics and Chemistry Basics',
+    subject: ' Intergrated Science',
+    description: 'Explore the fascinating world of cells, organisms, and biological systems.',
+    image: 'https://images.unsplash.com/photo-1579154341088-3e03c82fced8?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80',
+    level: 'Beginner',
+    lessonCount: 15
+  },
+  {
+    id: 3,
+    title: 'Essay Writing Skills',
+    subject: 'English',
+    description: 'Develop strong writing skills and learn to craft compelling essays.',
+    image: 'https://images.unsplash.com/photo-1579154341088-3e03c82fced8?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80',
+    level: 'All levels',
+    lessonCount: 10
+  },
+  {
+   id: 4,
+    title: 'Distinction Social Studies',
+    subject: 'Social Studies',
+    description: 'Explore the fascinating world of the Ancient History, Community Service and the Natural Environments in Africa',
+    image: 'https://images.unsplash.com/photo-1579154341088-3e03c82fced8?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80',
+    level: 'Beginner',
+    lessonCount: 14
+  },
+  {
+    id: 5,
+    title: 'Agriculture and Nutrition Fundamentals',
+    subject: 'Agrinutrition',
+    description: 'Learn the Basics of Agriculture and Nutrition.Gain Knowledge on how to stay and eat healthy foods.Master Planting,weeding,pruning and harvesting of crops',
+    image: 'https://images.unsplash.com/photo-1579154341088-3e03c82fced8?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80',
+    level: 'Intermediate',
+    lessonCount: 18
+
+  },
+  {
+    id: 6,
+    title: 'Pre-technical Studies and Entreprenuership Skills',
+    subject: 'Pre-Technical Studies',
+    description: 'Master Entrepreneurial Skills,The foundation of Pre-Technical Studies ,Materials For Production and Many more.',
+    image: 'https://images.unsplash.com/photo-1579154341088-3e03c82fced8?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80',
+    level: 'Intermediate',
+    lessonCount: 16
+  },
+
+  {
+  id: 7,
+    title: 'Introduction to Coding',
+    subject: 'Computer Science',
+    description: 'Learn the basics of programming with easy-to-follow lessons and exercises.',
+    image: 'https://images.unsplash.com/photo-1579154341088-3e03c82fced8?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80',
+    level: 'Beginner',
+    lessonCount: 12
+  },
+
+  {
+  id: 8,
+    title: 'Creative Arts and Sports',
+    subject: 'Creative Arts',
+    description: 'Master the art of Creativity and the various sports we offer. ',
     image: 'https://images.unsplash.com/photo-1579154341088-3e03c82fced8?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80',
     level: 'Intermediate',
     lessonCount: 15
   },
+
+  {
+    id: 9,
+    title: 'Kiswahili Fundamentals',
+    subject: 'Kiswahili',
+    description: 'Strengthen your Kiswahili skills with comprehensive lessons and exercises.',
+    image: 'https://images.unsplash.com/photo-1579154341088-3e03c82fced8?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80',
+    level: 'Beginner',
+    lessonCount: 10
+  },
   // Adding the rest would be similar
 ];
 
+// Updated lesson type definition
+type Lesson = {
+  id: number;
+  title: string;
+  duration: string;
+  isCompleted?: boolean;
+  pdfUrl?: string; // URL to the PDF document
+  pdfDescription?: string; // Optional description of the PDF content
+};
+
 // Sample lessons data
-const lessonsByCourseName: Record<string, { id: number, title: string, duration: string, isCompleted?: boolean }[]> = {
-  'Algebra Fundamentals': [
-    { id: 1, title: 'Introduction to Algebra', duration: '15 min' },
-    { id: 2, title: 'Working with Variables', duration: '20 min' },
-    { id: 3, title: 'Understanding Expressions', duration: '25 min' },
-    { id: 4, title: 'Solving Simple Equations', duration: '30 min' },
-    { id: 5, title: 'Linear Equations', duration: '35 min' },
-    { id: 6, title: 'Working with Inequalities', duration: '25 min' },
-    { id: 7, title: 'Graphing Equations', duration: '40 min' },
-    { id: 8, title: 'Systems of Equations', duration: '45 min' },
-    { id: 9, title: 'Exponents and Powers', duration: '30 min' },
-    { id: 10, title: 'Polynomials', duration: '35 min' },
-    { id: 11, title: 'Factoring', duration: '40 min' },
-    { id: 12, title: 'Quadratic Equations', duration: '45 min' },
+const lessonsByCourseName: Record<string, Lesson[]> = {
+  'Mathematics Fundamentals': [
+    { id: 1, title: 'finding Area', duration: '15 min', pdfUrl: './pdfs/mathematics/area-9.pdf', pdfDescription: 'Complete guide to area calculation formulas for different shapes' },
+    { id: 2, title: 'Solving linear inequalities', duration: '20 min', pdfUrl: '/pdfs/mathematics/linear_inequalities pdf', pdfDescription: 'Step-by-step approach to solving linear inequalities'},
+    { id: 3, title: 'Finding Mass', duration: '25 min' },
+    { id: 4, title: 'Finding Volume', duration: '30 min' },
+    { id: 5, title: 'Indices Questions', duration: '35 min' },
+    { id: 6, title: 'Equations on a straight line', duration: '25 min' },
+    { id: 7, title: 'Working with time', duration: '40 min' },
+    { id: 8, title: 'Money', duration: '45 min' },
+    { id: 9, title: 'Matrix', duration: '30 min' },
+    { id: 10, title: 'Cube and cube roots', duration: '35 min' },
+    { id: 11, title: 'jss maths intro formulars', duration: '40 min' },
+    { id: 12, title: 'Integer questions', duration: '45 min' },
+    { id: 13, title: 'Approximation and error', duration: '40 min' },
+    { id: 14, title: 'Compound proportions and rates of work', duration: '30 min' },
+    { id: 15, title: 'working with logarithms', duration: '30 min' },
   ],
-  'Biology: Cells & Systems': [
+  'Biology,Physics and Chemistry Basics': [
     { id: 1, title: 'Introduction to Biology', duration: '20 min' },
     { id: 2, title: 'Cell Structure', duration: '30 min' },
     { id: 3, title: 'Cell Functions', duration: '25 min' },
@@ -71,7 +150,7 @@ const lessonsByCourseName: Record<string, { id: number, title: string, duration:
 const CourseView = () => {
   const { courseId } = useParams<{ courseId: string }>();
   const [course, setCourse] = useState<CourseProps | null>(null);
-  const [lessons, setLessons] = useState<Array<{ id: number, title: string, duration: string, isCompleted: boolean }>>([]);
+  const [lessons, setLessons] = useState<Array<Lesson & { isCompleted: boolean }>>([]);
   const [progress, setProgress] = useState(0);
   const [activeTab, setActiveTab] = useState('overview');
   const { isLoggedIn } = useAuth();
@@ -110,8 +189,8 @@ const CourseView = () => {
       return;
     }
     
-    // In a real app, this would navigate to the lesson content
-    toast.success(`Opening lesson: ${lessons.find(l => l.id === lessonId)?.title}`);
+    // Navigate to the lesson view
+    window.location.href = `/course/${courseId}/lessons/${lessonId}`;
     
     // Mark lesson as completed
     setLessons(prevLessons => {
@@ -194,16 +273,17 @@ const CourseView = () => {
               <div className="bg-gray-50 border border-gray-100 rounded-lg p-6 mb-6">
                 <h3 className="text-lg font-semibold mb-4">What you'll learn</h3>
                 <ul className="grid grid-cols-1 md:grid-cols-2 gap-3">
-                  {[1, 2, 3, 4, 5, 6].map(i => (
+                  {[1, 2, 3, 4, 5, 6, 7, 8].map(i => (
                     <li key={i} className="flex items-start">
                       <svg className="h-5 w-5 text-green-500 mr-2 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
                       </svg>
                       <span className="text-gray-700">
                         {course.subject === 'Mathematics' ? 
-                          `Understanding ${['variables', 'equations', 'functions', 'graphs', 'problem solving', 'mathematical reasoning'][i-1]}` : 
-                          `Learning about ${['cells', 'organisms', 'systems', 'processes', 'structures', 'relationships'][i-1]}`
-                        }
+                          `Understanding ${['Area', 'Linear Inequalities', 'mass', 'volume', 'indices questions', 'Equations',
+                              'Time and Money', 'Integers'][i-1] || ''}` : 
+                          `Learning about ${['cells', 'organisms', 'systems', 'processes', 'structures', 'relationships','morphins','algaes'][i-1] || ''}`
+                          }
                       </span>
                     </li>
                   ))}

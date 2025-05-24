@@ -12,7 +12,7 @@ const subjects = [
   },
   { 
     id: 2, 
-    name: 'Science', 
+    name: 'Intergrated Science', 
     icon: '🔬', 
     color: 'bg-green-100 text-green-600',
     description: 'Biology, chemistry, physics'
@@ -26,24 +26,45 @@ const subjects = [
   },
   { 
     id: 4, 
-    name: 'History', 
+    name: 'Distinction Social Studies', 
     icon: '🏛️', 
     color: 'bg-amber-100 text-amber-600',
-    description: 'World events and civilizations'
+    description: 'World events and civilizations,Natural Environments'
   },
   { 
     id: 5, 
-    name: 'Geography', 
+    name: 'Agrinutrition', 
     icon: '🌍', 
     color: 'bg-teal-100 text-teal-600',
-    description: 'Maps, countries, landforms'
+    description: 'Agriculture and nutrition'
   },
   { 
     id: 6, 
+    name: 'Pre-technical studies', 
+    icon: '💻', 
+    color: 'bg-indigo-100 text-indigo-600',
+    description: 'Communication,business and entrepreneurship'
+  },
+   { 
+    id: 7, 
     name: 'Computer Science', 
     icon: '💻', 
     color: 'bg-indigo-100 text-indigo-600',
     description: 'Programming and technology'
+  },
+   { 
+    id: 8, 
+    name: 'Creative Arts', 
+    icon: '💻', 
+    color: 'bg-indigo-100 text-indigo-600',
+    description: 'Creative arts and sports'
+  },
+   { 
+    id: 9, 
+    name: 'Kiswahili', 
+    icon: '📚', 
+    color: 'bg-indigo-100 text-indigo-600',
+    description: 'Communication in the swahili Language'
   },
 ];
 

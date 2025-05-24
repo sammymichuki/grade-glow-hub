@@ -17,7 +17,7 @@ export interface CourseProps {
 
 const CourseCard = ({ course }: { course: CourseProps }) => {
   return (
-    <Card className="overflow-hidden h-full flex flex-col hover:shadow-md transition-shadow">
+    <Card className="overflow-hidden h-full flex flex-col hover:shadow-md transition-shadow pt-40">
       <div className="relative">
         <img 
           src={course.image} 
