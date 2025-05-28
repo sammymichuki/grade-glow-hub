@@ -1,6 +1,6 @@
-{"homepage": "https://sammymichuki.github.io/grade-glow-hub",
+{
 
-
+   "homepage":"https://sammymichuki.github.io/grade-glow-hub/",
   "name": "vite_react_shadcn_ts",
   "private": true,
   "version": "0.0.0",

@@ -6,7 +6,7 @@ import { componentTagger } from "lovable-tagger";
 
 // https://vitejs.dev/config/
 export default defineConfig(({ mode }) => ({
-  base: '/grade-glow-hub/', // 👈 ADD THIS LINE
+  base: mode === 'production' ? '/grade-glow-hub/' : '/',
 
   server: {
     host: "::",
