@@ -19,15 +19,16 @@ const allCourses: CourseProps[] = [
     level: 'Beginner',
     lessonCount: 15
   },
-  {
-    id: 2,
-    title: 'Biology,Physics and Chemistry Basics',
-    subject: 'Intergrated Science',
-    description: 'Explore the fascinating world of cells, organisms, and biological systems.',
-    image: 'https://images.unsplash.com/photo-1579154341088-3e03c82fced8?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80',
-    level: 'Beginner',
-    lessonCount: 15
-  },
+ {
+  id: 2,
+  title: 'Biology, Physics and Chemistry Basics',
+  subject: 'Integrated Science',
+  description: 'Explore the fascinating world of cells, organisms, and biological systems.',
+  image: 'https://images.unsplash.com/photo-1581090700227-1e8e48c18f17?auto=format&fit=crop&w=500&q=80',
+  level: 'Beginner',
+  lessonCount: 15
+},
+
   {
     id: 3,
     title: 'Essay Writing Skills',
@@ -55,15 +56,15 @@ const allCourses: CourseProps[] = [
     level: 'Intermediate',
     lessonCount: 18
   },
-  {
-    id: 6,
-    title: 'Pre-technical Studies and Entreprenuership Skills',
-    subject: 'Pre-Technical Studies',
-    description: 'Master Entrepreneurial Skills,The foundation of Pre-Technical Studies ,Materials For Production and Many more.',
-    image: 'https://images.unsplash.com/photo-1608415295464-f26297ecdac4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80',
-    level: 'Intermediate',
-    lessonCount: 16
-  },
+ {
+  id: 6,
+  title: 'Pre-technical Studies and Entrepreneurship Skills',
+  subject: 'Pre-Technical Studies',
+  description: 'Master Entrepreneurial Skills, The foundation of Pre-Technical Studies, Materials For Production and Many more.',
+  image: 'https://images.unsplash.com/photo-1556761175-b413da4baf72?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80',
+  level: 'Intermediate',
+  lessonCount: 16
+},
   {
     id: 7,
     title: 'Introduction to Coding',
