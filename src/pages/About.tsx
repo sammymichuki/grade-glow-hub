@@ -4,7 +4,7 @@ import Footer from '../components/Footer';
 
 const About = () => {
   return (
-    <div className="min-h-screen flex flex-col">
+    <div className=" pt-16 min-h-screen flex flex-col">
       <Navbar />
       
       <div className="bg-education-primary/10 py-12">
@@ -19,7 +19,7 @@ const About = () => {
           <section className="mb-12">
             <h2 className="text-2xl font-bold mb-4">Our Mission</h2>
             <p className="text-gray-700 mb-4">
-              At GradeGlow, our mission is to provide accessible, high-quality education to grade 9 students worldwide. 
+              At GradeGlow, our mission is to provide accessible, high-quality education to grade 4-9 students Kenyanwide. 
               We believe that every student deserves access to engaging educational content that helps them succeed in their academic journey.
             </p>
             <p className="text-gray-700">
@@ -40,7 +40,7 @@ const About = () => {
               <div className="bg-white p-6 rounded-lg shadow-sm border">
                 <h3 className="text-lg font-semibold mb-2 text-education-primary">Expert Teachers</h3>
                 <p className="text-gray-700">
-                  All our course materials are developed by experienced educators who understand the needs of grade 9 students.
+                  All our course materials are developed by experienced educators who understand the needs of grade 4-9 students.
                 </p>
               </div>
               <div className="bg-white p-6 rounded-lg shadow-sm border">
@@ -52,7 +52,7 @@ const About = () => {
               <div className="bg-white p-6 rounded-lg shadow-sm border">
                 <h3 className="text-lg font-semibold mb-2 text-education-primary">Curriculum Aligned</h3>
                 <p className="text-gray-700">
-                  Our courses are aligned with standard grade 9 curriculum requirements to ensure academic success.
+                  Our courses are aligned with standard grade 4-9 curriculum requirements to ensure academic success.
                 </p>
               </div>
             </div>
@@ -65,7 +65,7 @@ const About = () => {
             </p>
             <div className="bg-white p-6 rounded-lg shadow-sm border">
               <p className="mb-2"><span className="font-semibold">Email:</span> info@gradeglowapp.com</p>
-              <p className="mb-2"><span className="font-semibold">Phone:</span> (123) 456-7890</p>
+              <p className="mb-2"><span className="font-semibold">Phone:</span> (+254) 7810 62694</p>
               <p><span className="font-semibold">Address:</span> 123 Learning Lane, Education City, EC 12345</p>
             </div>
           </section>

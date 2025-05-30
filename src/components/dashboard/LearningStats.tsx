@@ -15,7 +15,7 @@ const LearningStats = () => {
             <p className="text-sm text-gray-600">Courses in progress</p>
           </div>
           <div className="bg-green-50 p-4 rounded-md text-center">
-            <p className="text-3xl font-bold text-green-600">42%</p>
+            <p className="text-3xl font-bold text-green-600">12%</p>
             <p className="text-sm text-gray-600">Avg. completion</p>
           </div>
           <div className="bg-amber-50 p-4 rounded-md text-center">
@@ -23,7 +23,7 @@ const LearningStats = () => {
             <p className="text-sm text-gray-600">Lessons completed</p>
           </div>
           <div className="bg-purple-50 p-4 rounded-md text-center">
-            <p className="text-3xl font-bold text-purple-600">4h</p>
+            <p className="text-3xl font-bold text-purple-600">2h</p>
             <p className="text-sm text-gray-600">Study time</p>
           </div>
         </div>

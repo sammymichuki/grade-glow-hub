@@ -109,8 +109,8 @@ type Lesson = {
 // Sample lessons data
 const lessonsByCourseName: Record<string, Lesson[]> = {
   'Mathematics Fundamentals': [
-    { id: 1, title: 'finding Area', duration: '15 min', pdfUrl: 'http://localhost:8080/pdfs/mathematics/Area-9.pdf', pdfDescription: 'Complete guide to area calculation formulas for different shapes' },
-    { id: 2, title: 'Solving linear inequalities', duration: '20 min', pdfUrl: 'http://localhost:8080/pdfs/mathematics/A_Gentle_Reminder_-_Bianca_Sparacino.pdf', pdfDescription: 'Step-by-step approach to solving linear inequalities'},
+    { id: 1, title: 'finding Area', duration: '15 min', pdfUrl: '/pdfs/mathematics/Area-9.pdf', pdfDescription: 'Complete guide to area calculation formulas for different shapes' },
+    { id: 2, title: 'Solving linear inequalities', duration: '20 min', pdfUrl: '/pdfs/mathematics/linear-inequalities-9.pdf', pdfDescription: 'Step-by-step approach to solving linear inequalities'},
     { id: 3, title: 'Finding Mass', duration: '25 min' },
     { id: 4, title: 'Finding Volume', duration: '30 min' },
     { id: 5, title: 'Indices Questions', duration: '35 min' },

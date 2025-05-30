@@ -4,7 +4,7 @@ import { Button } from "@/components/ui/button";
 
 const HeroSection = () => {
   return (
-    <div className="bg-gradient-to-r from-education-primary to-education-secondary text-white">
+    <div className="pt-20  bg-gradient-to-r from-education-primary to-education-secondary text-white">
       <div className="container-custom py-16 md:py-24">
         <div className="grid md:grid-cols-2 gap-10 items-center">
           <div className="animate-fade-in">
@@ -12,7 +12,7 @@ const HeroSection = () => {
               Your Path to Grade 9 Success Starts Here
             </h1>
             <p className="text-lg md:text-xl mb-8 text-blue-100">
-              Interactive lessons, practice exercises, and progress tracking designed specifically for grade 9 students.
+              Interactive lessons, practice exercises, and progress tracking designed specifically for grade 4-9 students.
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
               <Link to="/courses">

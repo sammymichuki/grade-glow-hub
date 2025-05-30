@@ -21,7 +21,7 @@ const enrolledCourses = [
     title: 'Mathematics Fundamentals',
     subject: 'Mathematics',
     image: 'https://images.unsplash.com/photo-1635070041078-e363dbe005cb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80',
-    progress: 75,
+    progress: 5,
     lastLesson: 'Solving Simple Equations'
   },
   {
@@ -29,7 +29,7 @@ const enrolledCourses = [
     title: 'Biology: Cells & Systems',
     subject: 'Science',
     image: 'https://images.unsplash.com/photo-1579154341088-3e03c82fced8?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80',
-    progress: 40,
+    progress: 2,
     lastLesson: 'Cell Division'
   },
   {
@@ -37,7 +37,7 @@ const enrolledCourses = [
     title: 'Essay Writing Skills',
     subject: 'English',
     image: 'https://images.unsplash.com/photo-1455390582262-044cdead277a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80',
-    progress: 20,
+    progress: 2,
     lastLesson: 'Introduction to Essay Structure'
   }
 ];

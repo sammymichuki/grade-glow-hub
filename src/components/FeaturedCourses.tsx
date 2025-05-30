@@ -14,15 +14,7 @@ const featuredCourses: CourseProps[] = [
     lessonCount: 15,
     isFeatured: true
   },
-  {
-  id: 8,
-    title: 'Creative Arts and Sports',
-    subject: 'Creative Arts',
-    description: 'Master the art of Creativity and the various sports we offer. ',
-    image: 'https://images.unsplash.com/photo-1579154341088-3e03c82fced8?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80',
-    level: 'Intermediate',
-    lessonCount: 15
-  },
+  
   {
     id: 3,
     title: 'Essay Writing Skills',
@@ -62,6 +54,16 @@ const featuredCourses: CourseProps[] = [
     level: 'Beginner',
     lessonCount: 12,
     isFeatured: true
+  },
+  {
+    id: 9,
+    title: 'Kiswahili Fundamentals',
+    subject: 'Kiswahili',
+    description: 'Strengthen your Kiswahili skills with comprehensive lessons and exercises.',
+    image: 'https://images.unsplash.com/photo-1503676260728-1c00da094a0b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80',
+    level: 'Grade-9',
+    isFeatured: true,
+    lessonCount: 10
   }
 ];
 
@@ -71,7 +73,7 @@ const FeaturedCourses = () => {
       <div className="container-custom">
         <div className="flex justify-between items-center mb-8">
           <h2 className="text-3xl font-bold">Featured Courses</h2>
-          <a href="/courses" className="text-education-primary hover:underline font-medium">
+          <a href="/courses#/courses" className="text-education-primary hover:underline font-medium">
             View All Courses
           </a>
         </div>

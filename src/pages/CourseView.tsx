@@ -183,6 +183,10 @@ const CourseView = () => {
     }
   }, [courseId, isLoggedIn]);
 
+  const continueLearning= () =>{
+      window.location.href = `#`
+  };
+
   const handleLessonClick = (lessonId: number) => {
     if (!isLoggedIn) {
       toast.error("Please login to access lessons");
@@ -208,7 +212,7 @@ const CourseView = () => {
 
   if (!course) {
     return (
-      <div className="min-h-screen flex flex-col">
+      <div className=" pt-16 min-h-screen flex flex-col">
         <Navbar />
         <main className="flex-grow container mx-auto px-4 py-8 flex items-center justify-center">
           <div className="text-center">
@@ -253,7 +257,7 @@ const CourseView = () => {
                   <span className="ml-4 font-medium">{progress}%</span>
                 </div>
               </div>
-              <Button className="self-start">Continue Learning</Button>
+              <Button className="self-start" >Continue Learning</Button>
             </div>
           </div>
         </div>

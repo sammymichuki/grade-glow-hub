@@ -16,7 +16,7 @@ const allCourses: CourseProps[] = [
     subject: 'Mathematics',
     description: 'Master the foundations of all Mathematics formulars from finding area to solving linear inequalities and all the other mathematical problems.',
     image: 'https://images.unsplash.com/photo-1635070041078-e363dbe005cb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80',
-    level: 'Beginner',
+    level: 'Grade-8',
     lessonCount: 15
   },
  {
@@ -25,7 +25,7 @@ const allCourses: CourseProps[] = [
   subject: 'Integrated Science',
   description: 'Explore the fascinating world of cells, organisms, and biological systems.',
   image: 'https://images.unsplash.com/photo-1581090700227-1e8e48c18f17?auto=format&fit=crop&w=500&q=80',
-  level: 'Beginner',
+  level: 'Grade-7',
   lessonCount: 15
 },
 
@@ -35,7 +35,7 @@ const allCourses: CourseProps[] = [
     subject: 'English',
     description: 'Develop strong writing skills and learn to craft compelling essays.',
     image: 'https://images.unsplash.com/photo-1455390582262-044cdead277a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80',
-    level: 'All Levels',
+    level: 'Grade-8',
     lessonCount: 10
   },
   {
@@ -44,7 +44,7 @@ const allCourses: CourseProps[] = [
     subject: 'Social Studies',
     description: 'Explore the fascinating world of the Ancient History, Community Service and the Natural Environments in Africa',
     image: 'https://images.unsplash.com/photo-1603126857599-f6e157fa2fe6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80',
-    level: 'Beginner',
+    level: 'Grade-7',
     lessonCount: 14
   },
   {
@@ -53,7 +53,7 @@ const allCourses: CourseProps[] = [
     subject: 'Agrinutrition',
     description: 'Learn the Basics of Agriculture and Nutrition.Gain Knowledge on how to stay and eat healthy foods.Master Planting,weeding,pruning and harvesting of crops.',
     image: 'https://images.unsplash.com/photo-1524661135-423995f22d0b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80',
-    level: 'Intermediate',
+    level: 'Grade-4',
     lessonCount: 18
   },
  {
@@ -62,7 +62,7 @@ const allCourses: CourseProps[] = [
   subject: 'Pre-Technical Studies',
   description: 'Master Entrepreneurial Skills, The foundation of Pre-Technical Studies, Materials For Production and Many more.',
   image: 'https://images.unsplash.com/photo-1556761175-b413da4baf72?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80',
-  level: 'Intermediate',
+  level: 'Grade-5',
   lessonCount: 16
 },
   {
@@ -71,7 +71,7 @@ const allCourses: CourseProps[] = [
     subject: 'Computer Science',
     description: 'Learn the basics of programming with easy-to-follow lessons and exercises.',
     image: 'https://images.unsplash.com/photo-1504639725590-34d0984388bd?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80',
-    level: 'Beginner',
+    level: 'Grade-6',
     lessonCount: 12
   },
   {
@@ -80,7 +80,7 @@ const allCourses: CourseProps[] = [
     subject: 'Creative Arts',
     description: 'Master the art of Creativity and the various sports we offer. ',
     image: 'https://images.unsplash.com/photo-1509228468518-180dd4864904?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80',
-    level: 'Intermediate',
+    level: 'Grade-7',
     lessonCount: 15
   },
   {
@@ -89,7 +89,7 @@ const allCourses: CourseProps[] = [
     subject: 'Kiswahili',
     description: 'Strengthen your Kiswahili skills with comprehensive lessons and exercises.',
     image: 'https://images.unsplash.com/photo-1503676260728-1c00da094a0b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80',
-    level: 'Beginner',
+    level: 'Grade-9',
     lessonCount: 10
   }
 ];
@@ -181,12 +181,12 @@ const Courses = () => {
   };
 
   return (
-    <div className="min-h-screen flex flex-col">
+    <div className=" pt-16 min-h-screen flex flex-col">
       <Navbar />
       <div className="bg-education-primary/10 py-12">
         <div className="container-custom">
           <h1 className="text-3xl md:text-4xl font-bold mb-3">Browse Courses</h1>
-          <p className="text-gray-600">Explore our comprehensive library of grade 9 courses</p>
+          <p className="text-gray-600">Explore our comprehensive library of grade  4-9 courses</p>
         </div>
       </div>
       <main className="flex-grow container-custom py-8">
@@ -220,10 +220,10 @@ const Courses = () => {
               <label className="block text-sm font-medium text-gray-700 mb-1">Level</label>
               <Select value={selectedLevel} onValueChange={handleLevelChange}>
                 <SelectTrigger>
-                  <SelectValue placeholder="All Levels" />
+                  <SelectValue placeholder="Grade 4-9" />
                 </SelectTrigger>
                 <SelectContent>
-                  <SelectItem value="all-levels">All Levels</SelectItem>
+                  <SelectItem value="all-levels"></SelectItem>
                   {levels.map(level => (
                     <SelectItem key={level} value={level}>
                       {level}

@@ -1,73 +1,68 @@
-# Welcome to your Lovable project
+# Student Learning Platform
 
-## Project info
+## Project Description
 
-**URL**: https://lovable.dev/projects/3576eee4-e96e-4724-9a64-432c3a3f5f8a
+A comprehensive online learning platform designed specifically for students in grades 4 to 9. This educational platform provides interactive learning experiences, engaging content, and structured curriculum to support students' academic growth across various subjects.
 
-## How can I edit this code?
+## Technologies Used
 
-There are several ways of editing your application.
+This project is built with modern web technologies:
 
-**Use Lovable**
+- **React** - Frontend library for building user interfaces
+- **Vite** - Fast build tool and development server
+- **TypeScript** - Type-safe JavaScript development
+- **Tailwind CSS** - Utility-first CSS framework for styling
+- **shadcn-ui** - Modern UI component library
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/3576eee4-e96e-4724-9a64-432c3a3f5f8a) and start prompting.
+## Getting Started
 
-Changes made via Lovable will be committed automatically to this repo.
+### Prerequisites
 
-**Use your preferred IDE**
+Make sure you have Node.js and npm installed on your system:
+- [Install Node.js with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+### Installation
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
-
-Follow these steps:
+Follow these steps to set up the project locally:
 
 ```sh
-# Step 1: Clone the repository using the project's Git URL.
+# Step 1: Clone the repository
 git clone <YOUR_GIT_URL>
 
-# Step 2: Navigate to the project directory.
+# Step 2: Navigate to the project directory
 cd <YOUR_PROJECT_NAME>
 
-# Step 3: Install the necessary dependencies.
-npm i
+# Step 3: Install dependencies
+npm install
 
-# Step 4: Start the development server with auto-reloading and an instant preview.
+# Step 4: Start the development server
 npm run dev
 ```
 
-**Edit a file directly in GitHub**
+The application will be available at `http://localhost:5173` (or another port as specified by Vite).
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+## Development
 
-**Use GitHub Codespaces**
+### Local Development
+- Run `npm run dev` to start the development server with hot reload
+- Make your changes and see them reflected instantly in the browser
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+### Building for Production
+```sh
+npm run build
+```
 
-## What technologies are used for this project?
+## Contributing
 
-This project is built with:
+We welcome contributions to improve the learning platform! Please feel free to:
+- Report bugs or issues
+- Suggest new features
+- Submit pull requests
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+## Support
 
-## How can I deploy this project?
+If you encounter any issues or have questions about the platform, please create an issue in this repository.
 
-Simply open [Lovable](https://lovable.dev/projects/3576eee4-e96e-4724-9a64-432c3a3f5f8a) and click on Share -> Publish.
+## License
 
-## Can I connect a custom domain to my Lovable project?
-
-Yes, you can!
-
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
-
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/tips-tricks/custom-domain#step-by-step-guide)
+This project is licensed under the MIT License - see the LICENSE file for details.

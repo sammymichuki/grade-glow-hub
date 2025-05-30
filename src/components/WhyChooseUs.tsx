@@ -8,8 +8,8 @@ const WhyChooseUs = () => {
       description: "Learn at your own pace with flexible course schedules and on-demand lessons."
     },
     {
-      title: "Grade 9 Curriculum Aligned",
-      description: "All courses are designed to align with standard grade 9 educational requirements."
+      title: "Grade 4-9 Curriculum Aligned",
+      description: "All courses are designed to align with standard grade 4-9 educational requirements."
     },
     {
       title: "Track Your Progress",
@@ -19,14 +19,15 @@ const WhyChooseUs = () => {
       title: "Interactive Lessons",
       description: "Engage with interactive content, quizzes, and exercises designed to enhance learning."
     },
-    {
-      title: "Expert Teachers",
-      description: "Learn from experienced educators who specialize in teaching grade 9 students."
-    },
+    
     {
       title: "Learn Anywhere",
-      description: "Access your courses on any device, anytime, anywhere with our responsive platform."
-    }
+      description: "Access your courses on any device, anywhere with our responsive platform."
+    },
+     {
+      title: "Learn Anytime",
+      description: "Learn Anytime you want to,Add Reminders.Make your precious time count!."
+    },
   ];
 
   return (
@@ -35,7 +36,7 @@ const WhyChooseUs = () => {
         <div className="text-center max-w-3xl mx-auto mb-12">
           <h2 className="text-3xl font-bold mb-4">Why Choose GradeGlow?</h2>
           <p className="text-gray-600">
-            We're dedicated to making your grade 9 learning experience engaging, effective, and enjoyable.
+            We're dedicated to making your grade  4-9 learning experience engaging, effective, and enjoyable.
           </p>
         </div>
         
