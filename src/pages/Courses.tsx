@@ -24,7 +24,7 @@ const allCourses: CourseProps[] = [
   title: 'Biology, Physics and Chemistry Basics',
   subject: 'Integrated Science',
   description: 'Explore the fascinating world of cells, organisms, and biological systems.',
-  image: 'https://images.unsplash.com/photo-1581090700227-1e8e48c18f17?auto=format&fit=crop&w=500&q=80',
+  image: 'https://images.unsplash.com/photo-1532094349884-543bc11b234d?auto=format&fit=crop&w=500&q=80',
   level: 'Grade-5',
   lessonCount: 15
 },
@@ -43,7 +43,7 @@ const allCourses: CourseProps[] = [
     title: 'Distinction Social Studies',
     subject: 'Social Studies',
     description: 'Explore the fascinating world of the Ancient History, Community Service and the Natural Environments in Africa',
-    image: 'https://images.unsplash.com/photo-1603126857599-f6e157fa2fe6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80',
+    image:'https://images.unsplash.com/photo-1524661135-423995f22d0b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80',
     level: 'Grade-7',
     lessonCount: 14
   },
@@ -52,7 +52,7 @@ const allCourses: CourseProps[] = [
     title: 'Agriculture and Nutrition Fundamentals',
     subject: 'Agrinutrition',
     description: 'Learn the Basics of Agriculture and Nutrition.Gain Knowledge on how to stay and eat healthy foods.Master Planting,weeding,pruning and harvesting of crops.',
-    image: 'https://images.unsplash.com/photo-1524661135-423995f22d0b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80',
+    image: 'https://images.unsplash.com/photo-1560493676-04071c5f467b?auto=format&fit=crop&w=500&q=80',
     level: 'Grade-8',
     lessonCount: 18
   },
@@ -61,8 +61,8 @@ const allCourses: CourseProps[] = [
   title: 'Pre-technical Studies and Entrepreneurship Skills',
   subject: 'Pre-Technical Studies',
   description: 'Master Entrepreneurial Skills, The foundation of Pre-Technical Studies, Materials For Production and Many more.',
-  image: 'https://images.unsplash.com/photo-1556761175-b413da4baf72?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80',
-  level: 'Grade-9',
+  image: 'https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=500&q=80',
+  level: 'Grade-9',             
   lessonCount: 16
 },
   {
@@ -79,7 +79,7 @@ const allCourses: CourseProps[] = [
     title: 'Creative Arts and Sports',
     subject: 'Creative Arts',
     description: 'Master the art of Creativity and the various sports we offer. ',
-    image: 'https://images.unsplash.com/photo-1509228468518-180dd4864904?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80',
+    image: 'https://images.unsplash.com/photo-1513475382585-d06e58bcb0e0?auto=format&fit=crop&w=500&q=80',
     level: 'Grade-9',
     lessonCount: 15
   },
@@ -88,7 +88,7 @@ const allCourses: CourseProps[] = [
     title: 'Kiswahili Fundamentals',
     subject: 'Kiswahili',
     description: 'Strengthen your Kiswahili skills with comprehensive lessons and exercises.',
-    image: 'https://images.unsplash.com/photo-1503676260728-1c00da094a0b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80',
+    image: 'https://images.unsplash.com/photo-1471107340929-a87cd0f5b5f3?auto=format&fit=crop&w=500&q=80',
     level: 'Grade-9',
     lessonCount: 10
   }

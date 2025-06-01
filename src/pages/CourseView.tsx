@@ -25,7 +25,7 @@ const allCourses: CourseProps[] = [
     title: 'Biology,Physics and Chemistry Basics',
     subject: ' Intergrated Science',
     description: 'Explore the fascinating world of cells, organisms, and biological systems.',
-    image: 'https://images.unsplash.com/photo-1579154341088-3e03c82fced8?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80',
+    image: 'https://images.unsplash.com/photo-1617088778378-3e6f7a064ec9?auto=format&fit=crop&w=500&q=80',
     level: 'Grade-5,Grade-7,Grade-8,Grade-9',
     lessonCount: 15
   },
@@ -276,25 +276,7 @@ const CourseView = () => {
             <div className="max-w-3xl">
               <h2 className="text-2xl font-bold mb-4">About this course</h2>
               <p className="mb-6 text-gray-700">{course.description}</p>
-              
-              <div className="bg-gray-50 border border-gray-100 rounded-lg p-6 mb-6">
-                <h3 className="text-lg font-semibold mb-4">What you'll learn</h3>
-                <ul className="grid grid-cols-1 md:grid-cols-2 gap-3">
-                  {[1, 2, 3, 4, 5, 6, 7, 8].map(i => (
-                    <li key={i} className="flex items-start">
-                      <svg className="h-5 w-5 text-green-500 mr-2 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
-                      </svg>
-                      <span className="text-gray-700">
-                         
-                         
-                         
-                          
-                      </span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
+          
               
               <div className="mb-6">
                 <h3 className="text-lg font-semibold mb-4">Course details</h3>
