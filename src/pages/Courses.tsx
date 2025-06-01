@@ -16,8 +16,8 @@ const allCourses: CourseProps[] = [
     subject: 'Mathematics',
     description: 'Master the foundations of all Mathematics formulars from finding area to solving linear inequalities and all the other mathematical problems.',
     image: 'https://images.unsplash.com/photo-1635070041078-e363dbe005cb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80',
-    level: 'Grade-8',
-    lessonCount: 15
+    level: 'Grade-4',
+    lessonCount: 18
   },
  {
   id: 2,
@@ -25,7 +25,7 @@ const allCourses: CourseProps[] = [
   subject: 'Integrated Science',
   description: 'Explore the fascinating world of cells, organisms, and biological systems.',
   image: 'https://images.unsplash.com/photo-1581090700227-1e8e48c18f17?auto=format&fit=crop&w=500&q=80',
-  level: 'Grade-7',
+  level: 'Grade-5',
   lessonCount: 15
 },
 
@@ -35,7 +35,7 @@ const allCourses: CourseProps[] = [
     subject: 'English',
     description: 'Develop strong writing skills and learn to craft compelling essays.',
     image: 'https://images.unsplash.com/photo-1455390582262-044cdead277a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80',
-    level: 'Grade-8',
+    level: 'Grade-6',
     lessonCount: 10
   },
   {
@@ -53,7 +53,7 @@ const allCourses: CourseProps[] = [
     subject: 'Agrinutrition',
     description: 'Learn the Basics of Agriculture and Nutrition.Gain Knowledge on how to stay and eat healthy foods.Master Planting,weeding,pruning and harvesting of crops.',
     image: 'https://images.unsplash.com/photo-1524661135-423995f22d0b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80',
-    level: 'Grade-4',
+    level: 'Grade-8',
     lessonCount: 18
   },
  {
@@ -62,7 +62,7 @@ const allCourses: CourseProps[] = [
   subject: 'Pre-Technical Studies',
   description: 'Master Entrepreneurial Skills, The foundation of Pre-Technical Studies, Materials For Production and Many more.',
   image: 'https://images.unsplash.com/photo-1556761175-b413da4baf72?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80',
-  level: 'Grade-5',
+  level: 'Grade-9',
   lessonCount: 16
 },
   {
@@ -71,7 +71,7 @@ const allCourses: CourseProps[] = [
     subject: 'Computer Science',
     description: 'Learn the basics of programming with easy-to-follow lessons and exercises.',
     image: 'https://images.unsplash.com/photo-1504639725590-34d0984388bd?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80',
-    level: 'Grade-6',
+    level: 'Grade-9',
     lessonCount: 12
   },
   {
@@ -80,7 +80,7 @@ const allCourses: CourseProps[] = [
     subject: 'Creative Arts',
     description: 'Master the art of Creativity and the various sports we offer. ',
     image: 'https://images.unsplash.com/photo-1509228468518-180dd4864904?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80',
-    level: 'Grade-7',
+    level: 'Grade-9',
     lessonCount: 15
   },
   {

@@ -17,8 +17,8 @@ const allCourses: CourseProps[] = [
     subject: 'Mathematics',
     description: 'Master the foundations of all Mathematics formulars from finding area to solving linear inequalities and all the other mathematical problems',
     image: 'https://images.unsplash.com/photo-1635070041078-e363dbe005cb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80',
-    level: 'Beginner',
-    lessonCount: 15
+    level: 'Grade-4,Grade-7,Grade-8,Grade-9',
+    lessonCount: 18
   },
   {
     id: 2,
@@ -26,7 +26,7 @@ const allCourses: CourseProps[] = [
     subject: ' Intergrated Science',
     description: 'Explore the fascinating world of cells, organisms, and biological systems.',
     image: 'https://images.unsplash.com/photo-1579154341088-3e03c82fced8?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80',
-    level: 'Beginner',
+    level: 'Grade-5,Grade-7,Grade-8,Grade-9',
     lessonCount: 15
   },
   {
@@ -35,7 +35,7 @@ const allCourses: CourseProps[] = [
     subject: 'English',
     description: 'Develop strong writing skills and learn to craft compelling essays.',
     image: 'https://images.unsplash.com/photo-1579154341088-3e03c82fced8?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80',
-    level: 'All levels',
+    level: 'Grade-6,Grade-7,Grade-8,Grade-9 ',
     lessonCount: 10
   },
   {
@@ -44,7 +44,7 @@ const allCourses: CourseProps[] = [
     subject: 'Social Studies',
     description: 'Explore the fascinating world of the Ancient History, Community Service and the Natural Environments in Africa',
     image: 'https://images.unsplash.com/photo-1579154341088-3e03c82fced8?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80',
-    level: 'Beginner',
+    level: 'Grade-7,Grade-8,Grade-9',
     lessonCount: 14
   },
   {
@@ -53,7 +53,7 @@ const allCourses: CourseProps[] = [
     subject: 'Agrinutrition',
     description: 'Learn the Basics of Agriculture and Nutrition.Gain Knowledge on how to stay and eat healthy foods.Master Planting,weeding,pruning and harvesting of crops',
     image: 'https://images.unsplash.com/photo-1579154341088-3e03c82fced8?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80',
-    level: 'Intermediate',
+    level: 'Grade-5,Grade-8,Grade-9',
     lessonCount: 18
 
   },
@@ -63,7 +63,7 @@ const allCourses: CourseProps[] = [
     subject: 'Pre-Technical Studies',
     description: 'Master Entrepreneurial Skills,The foundation of Pre-Technical Studies ,Materials For Production and Many more.',
     image: 'https://images.unsplash.com/photo-1579154341088-3e03c82fced8?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80',
-    level: 'Intermediate',
+    level: 'Grade-6,Grade-8,Grade-9',
     lessonCount: 16
   },
 
@@ -73,7 +73,7 @@ const allCourses: CourseProps[] = [
     subject: 'Computer Science',
     description: 'Learn the basics of programming with easy-to-follow lessons and exercises.',
     image: 'https://images.unsplash.com/photo-1579154341088-3e03c82fced8?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80',
-    level: 'Beginner',
+    level: '<Grade-7,Grade-8,Grade-9',
     lessonCount: 12
   },
 
@@ -83,7 +83,7 @@ const allCourses: CourseProps[] = [
     subject: 'Creative Arts',
     description: 'Master the art of Creativity and the various sports we offer. ',
     image: 'https://images.unsplash.com/photo-1579154341088-3e03c82fced8?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80',
-    level: 'Intermediate',
+    level: 'Grade-4,Grade-5,Grade-6,Grade-9',
     lessonCount: 15
   },
 
@@ -93,10 +93,10 @@ const allCourses: CourseProps[] = [
     subject: 'Kiswahili',
     description: 'Strengthen your Kiswahili skills with comprehensive lessons and exercises.',
     image: 'https://images.unsplash.com/photo-1579154341088-3e03c82fced8?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80',
-    level: 'Beginner',
+    level: 'Grade-7,Grade-8,Grade-9',
     lessonCount: 10
   },
-  // Adding the rest would be similar
+  
 ];
 
 // Updated lesson type definition
@@ -112,21 +112,24 @@ type Lesson = {
 // Sample lessons data
 const lessonsByCourseName: Record<string, Lesson[]> = {
   'Mathematics Fundamentals': [
-    { id: 1, title: 'finding Area', duration: '15 min', pdfUrl: './pdfs/mathematics/area-9.pdf', pdfDescription: 'Complete guide to area calculation formulas for different shapes' },
-    { id: 2, title: 'Solving linear inequalities', duration: '20 min', pdfUrl: '/pdfs/mathematics/linear_inequalities pdf', pdfDescription: 'Step-by-step approach to solving linear inequalities'},
-    { id: 3, title: 'Finding Mass', duration: '25 min' },
-    { id: 4, title: 'Finding Volume', duration: '30 min' },
-    { id: 5, title: 'Indices Questions', duration: '35 min' },
-    { id: 6, title: 'Equations on a straight line', duration: '25 min' },
-    { id: 7, title: 'Working with time', duration: '40 min' },
-    { id: 8, title: 'Money', duration: '45 min' },
-    { id: 9, title: 'Matrix', duration: '30 min' },
-    { id: 10, title: 'Cube and cube roots', duration: '35 min' },
-    { id: 11, title: 'jss maths intro formulars', duration: '40 min' },
-    { id: 12, title: 'Integer questions', duration: '45 min' },
-    { id: 13, title: 'Approximation and error', duration: '40 min' },
-    { id: 14, title: 'Compound proportions and rates of work', duration: '30 min' },
-    { id: 15, title: 'working with logarithms', duration: '30 min' },
+    { id: 1, title: 'finding Area', duration: '15 min', pdfUrl: '/Area-9.pdf', pdfDescription: 'Complete guide to area calculation formulas for different shapes' },
+    { id: 2, title: 'Solving linear inequalities', duration: '20 min', pdfUrl: '/linear-inequalities-9.pdf', pdfDescription: 'Step-by-step approach to solving linear inequalities'},
+    { id: 3, title: 'Finding Mass', duration: '25 min',pdfUrl:'/mass-09.pdf',pdfDescription:'Finding the mass for various solids' },
+    { id: 4, title: 'Finding Volume', duration: '30 min',pdfUrl:'/volume-09.pdf',pdfDescription:'Finding the volume for different solids' },
+    { id: 5, title: 'Indices Questions', duration: '35 min',pdfUrl:'/Indices-questions.pdf',pdfDescription:'Questions regarding indices' },
+    { id: 6, title: 'Equations on a straight line', duration: '25 min',pdfUrl:'/equations-on-a-straight-line-9.pdf',pdfDescription:'Solving Equations on a straight line' },
+    { id: 7, title: 'Working with time', duration: '40 min',pdfUrl:'/Time.pdf',pdfDescription:'Learn all about time' },
+    { id: 8, title: 'Money', duration: '45 min',pdfUrl:'/money.pdf',pdfDescription:'Working with Money' },
+    { id: 9, title: 'Matrix', duration: '30 min',pdfUrl:'/matrix-9.pdf',pdfDescription:'Learn about matrix and solving matrix questions' },
+    { id: 10, title: 'Cube and cube roots', duration: '35 min',pdfUrl:'/cube-and-cube-roots.pdf',pdfDescription:'Working with cubes and finding cube roots' },
+    { id: 11, title: 'jss maths intro formulars', duration: '40 min',pdfUrl:'/jss-maths-grade-9-intro-formulas.pdf',pdfDescription:'Simplified Introduction Formulars' },
+    { id: 12, title: 'Integer questions', duration: '45 min',pdfUrl:'/integer-questions.pdf',pdfDescription:'Working with integers' },
+    { id: 13, title: 'Approximation and error', duration: '40 min',pdfUrl:'/Approximation-and-error.pdf',pdfDescription:'Learn solving approximation and error questions' },
+    { id: 14, title: 'Compound proportions and rates of work', duration: '30 min',pdfUrl:'/compound-proportions-and-rates-of-work.pdf',pdfDescription:'solving questions regarding rates of work and compound proportions' },
+    { id: 15, title: 'working with logarithms', duration: '30 min',pdfUrl:'/logarithms-9.pdf',pdfDescription:'learn how to solve logarithms problems' },
+    { id: 16, title: 'Finding bearing',duration:'20 min',pdfUrl:'/bearing.pdf',pdfDescription:'Learn how to find the bearing of a place or point'},
+    { id: 17, title: 'Grouped data ',duration:'25 min',pdfUrl:'/grouped-data.pdf',pdfDescription:'Work with grouped data and learn all the formulars involved'},
+    { id: 18, title: 'Integer questions',duration:'10 min',pdfUrl:'/integers-questions.pdf',pdfDescription:'Solve this questions!'}
   ],
   'Biology,Physics and Chemistry Basics': [
     { id: 1, title: 'Introduction to Biology', duration: '20 min' },
@@ -283,11 +286,10 @@ const CourseView = () => {
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
                       </svg>
                       <span className="text-gray-700">
-                        {course.subject === 'Mathematics' ? 
-                          `Understanding ${['Area', 'Linear Inequalities', 'mass', 'volume', 'indices questions', 'Equations',
-                              'Time and Money', 'Integers'][i-1] || ''}` : 
-                          `Learning about ${['cells', 'organisms', 'systems', 'processes', 'structures', 'relationships','morphins','algaes'][i-1] || ''}`
-                          }
+                         
+                         
+                         
+                          
                       </span>
                     </li>
                   ))}

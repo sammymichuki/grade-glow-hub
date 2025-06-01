@@ -13,17 +13,17 @@ const Footer = () => {
               <span className="text-xl font-bold text-white">GradeGlow</span>
             </Link>
             <p className="mt-4 text-gray-400">
-              Your comprehensive learning platform designed specifically for grade 9 students.
+              Your comprehensive learning platform designed specifically for grade 4-9 students.
             </p>
           </div>
           
           <div className="col-span-1">
             <h3 className="text-lg font-semibold mb-4">Subjects</h3>
             <ul className="space-y-2">
-              <li><Link to="/courses?subject=mathematics" className="text-gray-400 hover:text-white transition-colors">Mathematics</Link></li>
-              <li><Link to="/courses?subject=science" className="text-gray-400 hover:text-white transition-colors">Science</Link></li>
-              <li><Link to="/courses?subject=english" className="text-gray-400 hover:text-white transition-colors">English</Link></li>
-              <li><Link to="/courses?subject=history" className="text-gray-400 hover:text-white transition-colors">History</Link></li>
+              <li><Link to="/courses?subject=Mathematics" className="text-gray-400 hover:text-white transition-colors">Mathematics</Link></li>
+              <li><Link to="/courses?subject=English" className="text-gray-400 hover:text-white transition-colors">English</Link></li>
+              <li><Link to="/courses?subject=Intergrated science" className="text-gray-400 hover:text-white transition-colors">Intergrated Science</Link></li>
+              <li><Link to="/courses?subject=Computer Science " className="text-gray-400 hover:text-white transition-colors">Computer Science</Link></li>
             </ul>
           </div>
           
