@@ -1,4 +1,3 @@
-
 import { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { Button } from "@/components/ui/button";
@@ -13,7 +12,7 @@ import { useAuth } from '../contexts/AuthContext';
 
 const Register = () => {
   const navigate = useNavigate();
-  const { login } = useAuth();
+  const { register } = useAuth();
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -38,21 +37,30 @@ const Register = () => {
       return;
     }
 
+    if (formData.password.length < 6) {
+      toast.error("Password must be at least 6 characters long");
+      return;
+    }
+
     setIsLoading(true);
     
     try {
-      // In a real app, we'd call an API to register
-      // For now, we'll just store the login state
-      localStorage.setItem('userName', formData.name);
-      localStorage.setItem('userEmail', formData.email);
+      await register(formData.email, formData.password, formData.name);
+      toast.success("Account created successfully! Please log in to continue.");
+      navigate('/login');
+    } catch (error: any) {
+      // Better error handling for Firebase errors
+      let errorMessage = "Failed to create account";
       
-      // Then login the user
-      await login(formData.email, formData.password);
+      if (error.message.includes('email-already-in-use')) {
+        errorMessage = "An account with this email already exists.";
+      } else if (error.message.includes('weak-password')) {
+        errorMessage = "Password is too weak. Please choose a stronger password.";
+      } else if (error.message.includes('invalid-email')) {
+        errorMessage = "Invalid email address.";
+      }
       
-      toast.success("Account created successfully!");
-      navigate('/dashboard');
-    } catch (error) {
-      toast.error("Failed to create account");
+      toast.error(errorMessage);
     } finally {
       setIsLoading(false);
     }
@@ -104,6 +112,7 @@ const Register = () => {
                   id="password"
                   name="password"
                   type="password"
+                  placeholder="At least 6 characters"
                   required
                   value={formData.password}
                   onChange={handleChange}

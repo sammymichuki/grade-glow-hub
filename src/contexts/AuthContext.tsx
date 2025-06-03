@@ -1,16 +1,26 @@
-
 import { createContext, useContext, useState, useEffect, ReactNode } from 'react';
+import { 
+  signInWithEmailAndPassword, 
+  createUserWithEmailAndPassword, 
+  signOut, 
+  onAuthStateChanged,
+  updateProfile,
+  User as FirebaseUser
+} from 'firebase/auth';
+import { auth } from '../firebase/config';
 
 interface User {
   name: string;
   email: string;
+  uid: string;
 }
 
 interface AuthContextType {
   isLoggedIn: boolean;
   user: User | null;
   login: (email: string, password: string) => Promise<void>;
-  logout: () => void;
+  register: (email: string, password: string, name: string) => Promise<void>;
+  logout: () => Promise<void>;
   loading: boolean;
 }
 
@@ -22,57 +32,65 @@ export const AuthProvider = ({ children }: { children: ReactNode }) => {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    // Check if user is logged in from localStorage
-    const storedLoginStatus = localStorage.getItem('isLoggedIn');
-    const storedName = localStorage.getItem('userName');
-    const storedEmail = localStorage.getItem('userEmail');
-    
-    setIsLoggedIn(storedLoginStatus === 'true');
-    
-    if (storedLoginStatus === 'true' && storedEmail) {
-      setUser({
-        name: storedName || 'Student',
-        email: storedEmail
-      });
-    }
-    
-    setLoading(false);
+    const unsubscribe = onAuthStateChanged(auth, (firebaseUser: FirebaseUser | null) => {
+      if (firebaseUser) {
+        setUser({
+          name: firebaseUser.displayName || 'Student',
+          email: firebaseUser.email || '',
+          uid: firebaseUser.uid
+        });
+        setIsLoggedIn(true);
+      } else {
+        setUser(null);
+        setIsLoggedIn(false);
+      }
+      setLoading(false);
+    });
+
+    return () => unsubscribe();
   }, []);
 
   const login = async (email: string, password: string) => {
-    // Simulate API call
     try {
-      // In a real app, this would validate credentials with an API
-      localStorage.setItem('isLoggedIn', 'true');
-      localStorage.setItem('userEmail', email);
-      
-      // If this is the first login and we don't have a name, use a default
-      if (!localStorage.getItem('userName')) {
-        localStorage.setItem('userName', 'Student');
-      }
-      
-      setIsLoggedIn(true);
-      setUser({
-        name: localStorage.getItem('userName') || 'Student',
-        email
-      });
-      
-      return Promise.resolve();
-    } catch (error) {
-      return Promise.reject(error);
+      await signInWithEmailAndPassword(auth, email, password);
+      // User state will be updated by onAuthStateChanged
+    } catch (error: any) {
+      throw new Error(error.message);
     }
   };
 
-  const logout = () => {
-    localStorage.removeItem('isLoggedIn');
-    setIsLoggedIn(false);
-    setUser(null);
+  const register = async (email: string, password: string, name: string) => {
+    try {
+      const userCredential = await createUserWithEmailAndPassword(auth, email, password);
+      
+      // Update the user's display name
+      await updateProfile(userCredential.user, {
+        displayName: name
+      });
+      
+      // Sign out the user immediately after registration
+      // so they need to log in manually
+      await signOut(auth);
+      
+    } catch (error: any) {
+      throw new Error(error.message);
+    }
+  };
+
+  const logout = async () => {
+    try {
+      await signOut(auth);
+      // User state will be updated by onAuthStateChanged
+    } catch (error: any) {
+      throw new Error(error.message);
+    }
   };
 
   const value = {
     isLoggedIn,
     user,
     login,
+    register,
     logout,
     loading
   };

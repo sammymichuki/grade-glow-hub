@@ -1,4 +1,3 @@
-
 import { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { Button } from "@/components/ui/button";
@@ -36,8 +35,21 @@ const Login = () => {
       await login(formData.email, formData.password);
       toast.success("Successfully logged in!");
       navigate('/dashboard');
-    } catch (error) {
-      toast.error("Failed to login. Please check your credentials.");
+    } catch (error: any) {
+      // Better error handling for Firebase errors
+      let errorMessage = "Failed to login. Please check your credentials.";
+      
+      if (error.message.includes('user-not-found')) {
+        errorMessage = "No account found with this email address.";
+      } else if (error.message.includes('wrong-password')) {
+        errorMessage = "Incorrect password.";
+      } else if (error.message.includes('invalid-email')) {
+        errorMessage = "Invalid email address.";
+      } else if (error.message.includes('too-many-requests')) {
+        errorMessage = "Too many failed attempts. Please try again later.";
+      }
+      
+      toast.error(errorMessage);
     } finally {
       setIsLoading(false);
     }
