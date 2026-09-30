@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { useParams, Link } from 'react-router-dom';
+import { useParams, Link, useNavigate } from 'react-router-dom';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 import { Button } from "@/components/ui/button";
@@ -151,6 +151,7 @@ const lessonsByCourseName: Record<string, Lesson[]> = {
 };
 
 const CourseView = () => {
+  const navigate = useNavigate();
   const { courseId } = useParams<{ courseId: string }>();
   const [course, setCourse] = useState<CourseProps | null>(null);
   const [lessons, setLessons] = useState<Array<Lesson & { isCompleted: boolean }>>([]);
@@ -195,7 +196,7 @@ const CourseView = () => {
     }
     
     // Navigate to the lesson view
-    window.location.href = `/course/${courseId}/lessons/${lessonId}`;
+    navigate(`/course/${courseId}/lessons/${lessonId}`);
     
     // Mark lesson as completed
     setLessons(prevLessons => {

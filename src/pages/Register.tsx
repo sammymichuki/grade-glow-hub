@@ -58,6 +58,8 @@ const Register = () => {
         errorMessage = "Password is too weak. Please choose a stronger password.";
       } else if (error.message.includes('invalid-email')) {
         errorMessage = "Invalid email address.";
+      } else if (error.message.includes('api-key-not-valid') || error.message.includes('invalid-api-key') || error.message.includes('API key')) {
+        errorMessage = "Firebase credentials not configured. Please set your Firebase keys in .env";
       }
       
       toast.error(errorMessage);

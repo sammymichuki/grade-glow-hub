@@ -47,6 +47,8 @@ const Login = () => {
         errorMessage = "Invalid email address.";
       } else if (error.message.includes('too-many-requests')) {
         errorMessage = "Too many failed attempts. Please try again later.";
+      } else if (error.message.includes('api-key-not-valid') || error.message.includes('invalid-api-key') || error.message.includes('API key')) {
+        errorMessage = "Firebase credentials not configured. Please set your Firebase keys in .env";
       }
       
       toast.error(errorMessage);
