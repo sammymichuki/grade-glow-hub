@@ -1,23 +1,16 @@
-
 import { Link } from 'react-router-dom';
 import { Card, CardContent, CardFooter, CardHeader } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
+import { Course } from '@/shared/types/course';
 
-export interface CourseProps {
-  id: number;
-  title: string;
-  subject: string;
-  description: string;
-  image: string;
-  level: string;
-  lessonCount: number;
+export type CourseProps = Course & {
   isFeatured?: boolean;
-}
+};
 
-const CourseCard = ({ course }: { course: CourseProps }) => {
+const CourseCard = ({ course }: { course: CourseProps | Course }) => {
   return (
-    <Card className="overflow-hidden h-full flex flex-col hover:shadow-md transition-shadow pt-40">
+    <Card className="overflow-hidden h-full flex flex-col hover:shadow-md transition-shadow">
       <div className="relative">
         <img 
           src={course.image} 
@@ -26,7 +19,7 @@ const CourseCard = ({ course }: { course: CourseProps }) => {
         />
         <Badge 
           className="absolute top-3 left-3" 
-          variant={course.isFeatured ? "default" : "secondary"}
+          variant={'isFeatured' in course && course.isFeatured ? "default" : "secondary"}
         >
           {course.subject}
         </Badge>

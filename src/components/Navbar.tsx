@@ -5,7 +5,13 @@ import { Button } from "@/components/ui/button";
 import { Menu, X, BookOpen } from "lucide-react";
 import { useAuth } from '../contexts/AuthContext';
 
+import { NotificationCenter } from '@/features/collaboration/components/NotificationCenter';
+import { OfflineIndicator } from '@/features/offline-sync/components/OfflineIndicator';
+import { LanguageSwitcher } from '@/shared/components/LanguageSwitcher';
+import { useTranslation } from 'react-i18next';
+
 const Navbar = () => {
+  const { t } = useTranslation();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const { isLoggedIn, logout } = useAuth();
   const navigate = useNavigate();
@@ -32,31 +38,43 @@ const Navbar = () => {
         <div className="hidden md:flex items-center space-x-8">
           <div className="flex space-x-6">
             <Link to="/" className="text-gray-700 hover:text-education-primary transition-colors">
-              Home
+              {t('nav.home')}
             </Link>
             <Link to="/courses" className="text-gray-700 hover:text-education-primary transition-colors">
-              Courses
+              {t('nav.courses')}
+            </Link>
+            <Link to="/grades" className="text-gray-700 hover:text-education-primary transition-colors">
+              {t('nav.gradebook')}
+            </Link>
+            <Link to="/instructor" className="text-gray-700 hover:text-education-primary transition-colors">
+              {t('nav.instructor')}
+            </Link>
+            <Link to="/community" className="text-gray-700 hover:text-education-primary transition-colors">
+              {t('nav.community')}
             </Link>
             <Link to="/about" className="text-gray-700 hover:text-education-primary transition-colors">
-              About
+              {t('nav.about')}
             </Link>
           </div>
           
-          <div className="flex space-x-2">
+          <div className="flex items-center space-x-2">
+            <OfflineIndicator />
+            <LanguageSwitcher />
+            <NotificationCenter />
             {isLoggedIn ? (
-              <div className="flex items-center space-x-4">
+              <div className="flex items-center space-x-3">
                 <Link to="/dashboard">
-                  <Button variant="outline">Dashboard</Button>
+                  <Button variant="outline" size="sm">{t('nav.dashboard')}</Button>
                 </Link>
-                <Button onClick={handleLogout}>Logout</Button>
+                <Button size="sm" onClick={handleLogout}>{t('nav.logout')}</Button>
               </div>
             ) : (
               <div className="flex space-x-2">
                 <Link to="/login">
-                  <Button variant="outline">Login</Button>
+                  <Button variant="outline" size="sm">{t('nav.login')}</Button>
                 </Link>
                 <Link to="/register">
-                  <Button>Sign Up</Button>
+                  <Button size="sm">{t('nav.signup')}</Button>
                 </Link>
               </div>
             )}
@@ -86,6 +104,27 @@ const Navbar = () => {
               onClick={toggleMenu}
             >
               Courses
+            </Link>
+            <Link 
+              to="/grades"
+              className="px-4 py-2 text-gray-700 hover:bg-gray-100 rounded-md"
+              onClick={toggleMenu}
+            >
+              Gradebook
+            </Link>
+            <Link 
+              to="/instructor"
+              className="px-4 py-2 text-gray-700 hover:bg-gray-100 rounded-md"
+              onClick={toggleMenu}
+            >
+              Instructor Studio
+            </Link>
+            <Link 
+              to="/community"
+              className="px-4 py-2 text-gray-700 hover:bg-gray-100 rounded-md"
+              onClick={toggleMenu}
+            >
+              Community
             </Link>
             <Link 
               to="/about"

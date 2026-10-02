@@ -1,102 +1,17 @@
-
 import { useState, useEffect } from 'react';
 import { useSearchParams } from 'react-router-dom';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
-import CourseCard, { CourseProps } from '../components/CourseCard';
+import CourseCard from '../components/CourseCard';
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
-
-// Sample courses data
-const allCourses: CourseProps[] = [
-  {
-    id: 1,
-    title: 'Mathematics Fundamentals',
-    subject: 'Mathematics',
-    description: 'Master the foundations of all Mathematics formulars from finding area to solving linear inequalities and all the other mathematical problems.',
-    image: 'https://images.unsplash.com/photo-1635070041078-e363dbe005cb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80',
-    level: 'Grade-4',
-    lessonCount: 18
-  },
- {
-  id: 2,
-  title: 'Biology, Physics and Chemistry Basics',
-  subject: 'Integrated Science',
-  description: 'Explore the fascinating world of cells, organisms, and biological systems.',
-  image: 'https://images.unsplash.com/photo-1532094349884-543bc11b234d?auto=format&fit=crop&w=500&q=80',
-  level: 'Grade-5',
-  lessonCount: 15
-},
-
-  {
-    id: 3,
-    title: 'Essay Writing Skills',
-    subject: 'English',
-    description: 'Develop strong writing skills and learn to craft compelling essays.',
-    image: 'https://images.unsplash.com/photo-1455390582262-044cdead277a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80',
-    level: 'Grade-6',
-    lessonCount: 10
-  },
-  {
-    id: 4,
-    title: 'Distinction Social Studies',
-    subject: 'Social Studies',
-    description: 'Explore the fascinating world of the Ancient History, Community Service and the Natural Environments in Africa',
-    image:'https://images.unsplash.com/photo-1524661135-423995f22d0b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80',
-    level: 'Grade-7',
-    lessonCount: 14
-  },
-  {
-    id: 5,
-    title: 'Agriculture and Nutrition Fundamentals',
-    subject: 'Agrinutrition',
-    description: 'Learn the Basics of Agriculture and Nutrition.Gain Knowledge on how to stay and eat healthy foods.Master Planting,weeding,pruning and harvesting of crops.',
-    image: 'https://images.unsplash.com/photo-1560493676-04071c5f467b?auto=format&fit=crop&w=500&q=80',
-    level: 'Grade-8',
-    lessonCount: 18
-  },
- {
-  id: 6,
-  title: 'Pre-technical Studies and Entrepreneurship Skills',
-  subject: 'Pre-Technical Studies',
-  description: 'Master Entrepreneurial Skills, The foundation of Pre-Technical Studies, Materials For Production and Many more.',
-  image: 'https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=500&q=80',
-  level: 'Grade-9',             
-  lessonCount: 16
-},
-  {
-    id: 7,
-    title: 'Introduction to Coding',
-    subject: 'Computer Science',
-    description: 'Learn the basics of programming with easy-to-follow lessons and exercises.',
-    image: 'https://images.unsplash.com/photo-1504639725590-34d0984388bd?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80',
-    level: 'Grade-9',
-    lessonCount: 12
-  },
-  {
-    id: 8,
-    title: 'Creative Arts and Sports',
-    subject: 'Creative Arts',
-    description: 'Master the art of Creativity and the various sports we offer. ',
-    image: 'https://images.unsplash.com/photo-1513475382585-d06e58bcb0e0?auto=format&fit=crop&w=500&q=80',
-    level: 'Grade-9',
-    lessonCount: 15
-  },
-  {
-    id: 9,
-    title: 'Kiswahili Fundamentals',
-    subject: 'Kiswahili',
-    description: 'Strengthen your Kiswahili skills with comprehensive lessons and exercises.',
-    image: 'https://images.unsplash.com/photo-1471107340929-a87cd0f5b5f3?auto=format&fit=crop&w=500&q=80',
-    level: 'Grade-9',
-    lessonCount: 10
-  }
-];
+import { CourseService } from '@/features/courses/services/courseService';
+import { Course } from '@/shared/types/course';
 
 const Courses = () => {
   const [searchParams, setSearchParams] = useSearchParams();
-  const [filteredCourses, setFilteredCourses] = useState<CourseProps[]>([]);
+  const [filteredCourses, setFilteredCourses] = useState<Course[]>([]);
   const [subjects, setSubjects] = useState<string[]>([]);
   const [levels, setLevels] = useState<string[]>([]);
   
@@ -106,54 +21,24 @@ const Courses = () => {
   const [selectedLevel, setSelectedLevel] = useState('');
 
   useEffect(() => {
-    // Extract unique subjects and levels
-    const subjectSet = new Set(allCourses.map(course => course.subject));
-    const levelSet = new Set(allCourses.map(course => course.level));
-    
-    setSubjects(Array.from(subjectSet));
-    setLevels(Array.from(levelSet));
+    setSubjects(CourseService.getUniqueSubjects());
+    setLevels(CourseService.getUniqueLevels());
     
     // Apply initial filters from URL
     const subjectParam = searchParams.get('subject')?.toLowerCase();
     if (subjectParam) {
       setSelectedSubject(subjectParam);
     }
-    
-    filterCourses();
   }, [searchParams]);
 
   useEffect(() => {
-    filterCourses();
+    const results = CourseService.getCourses({
+      searchQuery: search,
+      subject: selectedSubject && selectedSubject !== 'all-subjects' ? selectedSubject : undefined,
+      level: selectedLevel && selectedLevel !== 'all-levels' ? selectedLevel : undefined,
+    });
+    setFilteredCourses(results);
   }, [search, selectedSubject, selectedLevel]);
-
-  const filterCourses = () => {
-    let filtered = [...allCourses];
-    
-    // Apply search filter
-    if (search) {
-      filtered = filtered.filter(
-        course => 
-          course.title.toLowerCase().includes(search.toLowerCase()) ||
-          course.description.toLowerCase().includes(search.toLowerCase())
-      );
-    }
-    
-    // Apply subject filter
-    if (selectedSubject) {
-      filtered = filtered.filter(
-        course => course.subject.toLowerCase() === selectedSubject.toLowerCase()
-      );
-    }
-    
-    // Apply level filter
-    if (selectedLevel) {
-      filtered = filtered.filter(
-        course => course.level === selectedLevel
-      );
-    }
-    
-    setFilteredCourses(filtered);
-  };
 
   const handleSearchChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setSearch(e.target.value);
@@ -161,7 +46,7 @@ const Courses = () => {
 
   const handleSubjectChange = (value: string) => {
     setSelectedSubject(value);
-    if (value) {
+    if (value && value !== 'all-subjects') {
       searchParams.set('subject', value);
     } else {
       searchParams.delete('subject');
@@ -181,12 +66,12 @@ const Courses = () => {
   };
 
   return (
-    <div className=" pt-16 min-h-screen flex flex-col">
+    <div className="pt-16 min-h-screen flex flex-col">
       <Navbar />
       <div className="bg-education-primary/10 py-12">
         <div className="container-custom">
           <h1 className="text-3xl md:text-4xl font-bold mb-3">Browse Courses</h1>
-          <p className="text-gray-600">Explore our comprehensive library of grade  4-9 courses</p>
+          <p className="text-gray-600">Explore our comprehensive library of grade 4-9 courses</p>
         </div>
       </div>
       <main className="flex-grow container-custom py-8">
@@ -223,7 +108,7 @@ const Courses = () => {
                   <SelectValue placeholder="Grade 4-9" />
                 </SelectTrigger>
                 <SelectContent>
-                  <SelectItem value="all-levels"></SelectItem>
+                  <SelectItem value="all-levels">All Levels</SelectItem>
                   {levels.map(level => (
                     <SelectItem key={level} value={level}>
                       {level}

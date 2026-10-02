@@ -26,6 +26,12 @@
 
       "lint": "eslint .",
 
+      "test": "vitest run",
+
+      "test:watch": "vitest",
+
+      "test:e2e": "playwright test",
+
       "preview": "vite preview"
 
    },
@@ -98,9 +104,13 @@
 
       "date-fns": "^3.6.0",
 
+      "dexie": "^4.4.6",
+
       "embla-carousel-react": "^8.3.0",
 
       "firebase": "^11.10.0",
+
+      "i18next": "^26.4.2",
 
       "input-otp": "^1.2.4",
 
@@ -117,6 +127,8 @@
       "react-dom": "^18.3.1",
 
       "react-hook-form": "^7.53.0",
+
+      "react-i18next": "^17.0.15",
 
       "react-pdf": "^7.7.1",
 
@@ -142,7 +154,15 @@
 
       "@eslint/js": "^9.9.0",
 
+      "@playwright/test": "^1.63.0",
+
       "@tailwindcss/typography": "^0.5.15",
+
+      "@testing-library/jest-dom": "^6.9.1",
+
+      "@testing-library/react": "^16.3.3",
+
+      "@testing-library/user-event": "^14.6.7",
 
       "@types/node": "^22.5.5",
 
@@ -162,9 +182,13 @@
 
       "eslint-plugin-react-refresh": "^0.4.9",
 
+      "fake-indexeddb": "^6.2.5",
+
       "gh-pages": "^6.3.0",
 
       "globals": "^15.9.0",
+
+      "jsdom": "^29.1.1",
 
       "lovable-tagger": "^1.1.7",
 
@@ -176,7 +200,9 @@
 
       "typescript-eslint": "^8.0.1",
 
-      "vite": "^5.4.1"
+      "vite": "^5.4.1",
+
+      "vitest": "^4.1.11"
 
    }
 
