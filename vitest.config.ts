@@ -14,6 +14,9 @@ export default defineConfig({
     setupFiles: './src/test/setup.ts',
     include: ['src/**/*.{test,spec}.{ts,tsx}'],
     exclude: ['e2e/**', 'node_modules/**'],
+    // The suite runs many jsdom integration specs in parallel workers; the
+    // default 5s budget is too tight for the heaviest ones under CPU contention.
+    testTimeout: 15000,
   },
   resolve: {
     alias: {

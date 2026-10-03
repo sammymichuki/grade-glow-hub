@@ -49,6 +49,9 @@ const Navbar = () => {
             <Link to="/instructor" className="text-gray-700 hover:text-education-primary transition-colors">
               {t('nav.instructor')}
             </Link>
+            <Link to="/admin" className="text-gray-700 hover:text-education-primary transition-colors">
+              {t('nav.admin')}
+            </Link>
             <Link to="/community" className="text-gray-700 hover:text-education-primary transition-colors">
               {t('nav.community')}
             </Link>
@@ -118,6 +121,13 @@ const Navbar = () => {
               onClick={toggleMenu}
             >
               Instructor Studio
+            </Link>
+            <Link 
+              to="/admin"
+              className="px-4 py-2 text-gray-700 hover:bg-gray-100 rounded-md"
+              onClick={toggleMenu}
+            >
+              Admin Control
             </Link>
             <Link 
               to="/community"

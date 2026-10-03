@@ -20,6 +20,7 @@ import QuizPage from "./pages/QuizPage";
 import GradebookPage from "./pages/GradebookPage";
 import InstructorPage from "./pages/InstructorPage";
 import CommunityPage from "./pages/CommunityPage";
+import AdminPage from "./pages/AdminPage";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -47,6 +48,8 @@ const App = () => (
               <Route path="/community" element={<CommunityPage />} />
               <Route path="/forums" element={<CommunityPage />} />
               <Route path="/peer-review" element={<CommunityPage />} />
+              <Route path="/admin" element={<AdminPage />} />
+              <Route path="/administration" element={<AdminPage />} />
               <Route path="/dashboard" element={<Dashboard />} />
               <Route path="/about" element={<About />} />
               <Route path="*" element={<NotFound />} />

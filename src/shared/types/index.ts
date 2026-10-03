@@ -6,3 +6,4 @@ export * from './instructor';
 export * from './collaboration';
 export * from './offline';
 export * from './telemetry';
+export * from './admin';

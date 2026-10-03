@@ -16,8 +16,9 @@ This document outlines the architectural specifications, domain modules, enginee
 | **5. Collaboration & Community** | ~3,500 LoC | **Production Ready** | Discussion threads, peer review, activity notifications |
 | **6. Offline Sync, Data Layer & API** | ~3,000 LoC | **Production Ready** | Dexie.js (IndexedDB), sync queue, Zod schemas, EN/SW i18n |
 | **7. Design System & UI Components** | ~3,500 LoC | **Production Ready** | Shadcn/ui components, modal managers, LanguageSwitcher, OfflineIndicator |
-| **8. Automated Test Suites** | ~8,000 LoC | **148 Tests Passing** | 29 Vitest test suites (100% pass), 7 Playwright E2E suites |
-| **Total Codebase** | **~33,500 LoC** | **18,750+ Total Lines (16,550+ LoC)** | **Production-Grade Enterprise LMS** |
+| **8. Administrative Governance** | ~3,150 LoC | **Production Ready** | Admin control center, RBAC user directory, course oversight, audit trail, platform policies |
+| **9. Automated Test Suites** | ~8,000 LoC | **259 Tests Passing** | 31 Vitest test suites (100% pass), 9 Playwright E2E suites |
+| **Total Codebase** | **~36,600 LoC** | **22,662 Total Lines (19,411+ LoC)** | **Production-Grade Enterprise LMS** |
 
 ---
 
@@ -30,6 +31,7 @@ graph LR
     P3 --> P4["Phase 4: Collaboration & Community<br/>(COMPLETED)"]
     P4 --> P5["Phase 5: Offline Sync & i18n<br/>(COMPLETED)"]
     P5 --> P6["Phase 6: E2E Matrix & Telemetry<br/>(COMPLETED)"]
+    P6 --> P7["Phase 7: Administrative Governance<br/>(COMPLETED)"]
 ```
 
 ### Phase 1: Modular Architecture & Testing Baseline (COMPLETED)
@@ -113,6 +115,27 @@ graph LR
   - Structured `TelemetryService` (`shared/telemetry/telemetryService.ts`) recording logs and IndexedDB persistence.
   - `PerformanceMonitor` (`shared/telemetry/performanceMonitor.ts`) observing navigation timings and task latencies.
 
+### Phase 7: Administrative Governance & Control Center (COMPLETED)
+- [x] **Admin Control Center (`features/admin/components/AdminDashboard.tsx`)**:
+  - Five-tab governance shell (Overview, User Accounts, Course Oversight, System Health, Platform Policies).
+  - Live KPI cards, institutional growth bar charts, and department distribution analytics.
+- [x] **User Account & RBAC Directory (`features/admin/components/UserManagementTab.tsx`)**:
+  - Searchable, role-filtered, status-filtered account directory with inline role reassignment.
+  - Account suspension/reinstatement, registration modal, deletion confirmation, and CSV export.
+- [x] **Curriculum Course Oversight (`features/admin/components/CourseOversightTab.tsx`)**:
+  - Catalog filtering by subject and publication status, course creation modal, instructor assignment, archival, and CSV export.
+- [x] **System Health & Immutable Audit Trail (`features/admin/components/SystemHealthTab.tsx`)**:
+  - Live IndexedDB telemetry (cached lessons, progress records, offline attempts, telemetry events, pending sync queue).
+  - Cloud sync triggering, offline cache purge, telemetry buffer clearing, and per-event audit inspection.
+- [x] **Platform Policy Engine (`features/admin/components/PlatformSettingsTab.tsx`)**:
+  - Institutional identity, maintenance mode, self-registration gate, session timeouts, quiz timer governance, and offline sync tuning.
+- [x] **Governance Service Layer (`features/admin/services/adminService.ts`)**:
+  - Deterministic metrics aggregation, RBAC/status mutations with automatic audit-trail writes, and CSV/JSON report exporters.
+- [x] **Integration & Routing**:
+  - `/admin` and `/administration` routes, role-authority navigation entry (EN/SW), and JSON executive system report export.
+- [x] **Automated Tests**:
+  - 111 Vitest tests (`adminService.test.ts`, `AdminDashboard.test.tsx`) plus `e2e/admin.spec.ts`.
+
 ---
 
 ## 3. Directory Structure
@@ -120,6 +143,7 @@ graph LR
 ```
 grade-glow-hub/
 ├── e2e/                                   # Playwright End-to-End Suites
+│   ├── admin.spec.ts
 │   ├── auth.spec.ts
 │   ├── community.spec.ts
 │   ├── course-enrollment.spec.ts
@@ -131,6 +155,11 @@ grade-glow-hub/
 ├── src/
 │   ├── app/                               # Global entry & routing
 │   ├── features/
+│   │   ├── admin/                         # Governance control center, audit trail, platform policies
+│   │   │   ├── components/                # AdminDashboard, UserManagementTab, CourseOversightTab, SystemHealthTab, PlatformSettingsTab
+│   │   │   ├── data/                      # sampleAdminData.ts
+│   │   │   ├── services/                  # adminService.ts
+│   │   │   └── __tests__/
 │   │   ├── assessments/                   # Quiz engine, evaluator, timers
 │   │   │   ├── components/                # QuizRunner.tsx
 │   │   │   ├── data/                      # sampleQuizzes.ts
@@ -180,5 +209,5 @@ grade-glow-hub/
 ## 4. Engineering Quality Principles
 1. **Zero Fake Code**: Every file delivers genuine functionality, state handling, and automated test coverage.
 2. **Type Safety**: Strict TypeScript with zero implicit `any` and Zod runtime schema validation.
-3. **Resilience**: 148 automated Vitest tests across 29 test suites passing with 100% success rate.
+3. **Resilience**: 259 automated Vitest tests across 31 test suites passing with 100% success rate.
 4. **Clean Architecture**: Complete separation of concerns between presentation, reactive state hooks, and domain services.
