@@ -1,8 +1,11 @@
 
 import { useState } from 'react';
-import { Navigate } from 'react-router-dom';
+import { Navigate, Link } from 'react-router-dom';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import { Button } from "@/components/ui/button";
 import { useAuth } from '../contexts/AuthContext';
+import { StreakCounterWidget } from '@/features/gamification/components/StreakCounterWidget';
+import { Swords, Compass } from 'lucide-react';
 
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
@@ -116,6 +119,23 @@ const Dashboard = () => {
           
           {/* Sidebar - 1/3 width on large screens */}
           <div className="space-y-6">
+            <StreakCounterWidget />
+
+            <div className="grid grid-cols-2 gap-2">
+              <Link to="/mastery">
+                <Button variant="outline" className="w-full text-xs h-9 flex items-center justify-center gap-1.5 font-bold hover:border-blue-400">
+                  <Compass className="w-4 h-4 text-blue-600" />
+                  Mastery Tree
+                </Button>
+              </Link>
+              <Link to="/arena">
+                <Button className="w-full text-xs h-9 flex items-center justify-center gap-1.5 font-bold bg-red-600 hover:bg-red-700 text-white">
+                  <Swords className="w-4 h-4" />
+                  GlowArena
+                </Button>
+              </Link>
+            </div>
+
             <LearningStats />
             <StudyGoals />
             <StudyReminders />

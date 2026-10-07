@@ -6,6 +6,8 @@ import { QuizRunner } from '@/features/assessments/components/QuizRunner';
 import { AssessmentService } from '@/features/assessments/services/assessmentService';
 import { useAuth } from '../contexts/AuthContext';
 
+import { GlowBotChatDrawer } from '@/features/ai-tutor/components/GlowBotChatDrawer';
+
 const QuizPage = () => {
   const { quizId } = useParams<{ quizId: string }>();
   const navigate = useNavigate();
@@ -41,6 +43,13 @@ const QuizPage = () => {
           onExit={() => navigate(`/course/${quiz.courseId}`)}
         />
       </main>
+      <GlowBotChatDrawer
+        context={{
+          subject: 'Academic Assessment',
+          gradeLevel: 7,
+          topic: quiz.title,
+        }}
+      />
       <Footer />
     </div>
   );

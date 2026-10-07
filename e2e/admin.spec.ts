@@ -82,6 +82,12 @@ test.describe('Administrative Control Center E2E Flow', () => {
   test('is reachable from the primary navigation', async ({ page }) => {
     await page.goto('/#/');
 
+    // Expand management dropdown if dropdown navigation is used
+    const managementBtn = page.locator('button[data-nav-dropdown="management"]').first();
+    if (await managementBtn.isVisible()) {
+      await managementBtn.click();
+    }
+
     const adminLink = page.locator('nav a[href="#/admin"]').first();
     await expect(adminLink).toBeVisible();
     await adminLink.click();

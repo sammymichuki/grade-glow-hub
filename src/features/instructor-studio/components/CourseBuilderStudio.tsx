@@ -28,8 +28,10 @@ import {
   PlayCircle,
   Eye,
   GripVertical,
+  Sparkles,
 } from 'lucide-react';
 import { toast } from 'sonner';
+import { AIQuestionGeneratorModal } from '@/features/curriculum-ingest/components/AIQuestionGeneratorModal';
 
 export const CourseBuilderStudio: React.FC = () => {
   const [draft, setDraft] = useState<CourseBuilderDraft>(SAMPLE_CURRICULUM_DRAFT);
@@ -40,6 +42,7 @@ export const CourseBuilderStudio: React.FC = () => {
   const [newLessonTitle, setNewLessonTitle] = useState('');
   const [newLessonType, setNewLessonType] = useState<LessonType>('article');
   const [activeModuleIdForNewLesson, setActiveModuleIdForNewLesson] = useState<string | null>(null);
+  const [isAIModalOpen, setIsAIModalOpen] = useState(false);
 
   // New keynote state
   const [keynoteTime, setKeynoteTime] = useState<number>(60);
@@ -223,6 +226,14 @@ export const CourseBuilderStudio: React.FC = () => {
         </div>
 
         <div className="flex items-center gap-2">
+          <Button
+            variant="outline"
+            size="sm"
+            onClick={() => setIsAIModalOpen(true)}
+            className="gap-2 text-purple-700 border-purple-200 hover:bg-purple-50"
+          >
+            <Sparkles className="w-4 h-4" /> AI Quiz Generator
+          </Button>
           <Button variant="outline" size="sm" onClick={handleExport} className="gap-2">
             <Download className="w-4 h-4" /> Export Package
           </Button>
@@ -621,6 +632,11 @@ export const CourseBuilderStudio: React.FC = () => {
           )}
         </div>
       </div>
+
+      <AIQuestionGeneratorModal
+        isOpen={isAIModalOpen}
+        onClose={() => setIsAIModalOpen(false)}
+      />
     </div>
   );
 };

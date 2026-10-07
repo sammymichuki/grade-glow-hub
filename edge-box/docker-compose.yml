@@ -1,0 +1,27 @@
+services:
+  mesh-box:
+    build:
+      context: ..
+      dockerfile: edge-box/Dockerfile
+    image: grade-glow-mesh-box:latest
+    container_name: grade-glow-mesh-box
+    ports:
+      - "8080:8080"
+    volumes:
+      - edge-box-data:/data
+    environment:
+      EDGE_DATA_DIR: /data
+      EDGE_AUTH_TOKEN: ${EDGE_AUTH_TOKEN:-school-let-me-learn}
+      # Opportunistic cloud sync — uncomment when a (even intermittent) WAN link is available.
+      # The box then pushes quiz deltas and pulls curriculum updates on a timer.
+      # EDGE_CLOUD_URL: ${EDGE_CLOUD_URL:-http://cloud-relay.lan:8080}
+      # EDGE_CLOUD_TOKEN: ${EDGE_CLOUD_TOKEN:-}
+      # EDGE_SYNC_INTERVAL_MS: 300000
+    restart: unless-stopped
+    # Zero-internet classrooms: expose the box on the school Wi-Fi access point.
+    # Teachers browse http://192.168.4.1:8080 from any student device.
+    # For simple NAT-less LAN setups you may instead use:
+    # network_mode: host
+
+volumes:
+  edge-box-data:

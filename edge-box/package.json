@@ -1,0 +1,15 @@
+{
+  "name": "grade-glow-edge-box",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Local school edge server for offline-first GradeGlow instruction. Zero npm dependencies.",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "check": "node --check server.js"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "license": "UNLICENSED"
+}

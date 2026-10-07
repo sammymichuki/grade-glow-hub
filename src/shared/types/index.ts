@@ -7,3 +7,4 @@ export * from './collaboration';
 export * from './offline';
 export * from './telemetry';
 export * from './admin';
+export * from './gamification';

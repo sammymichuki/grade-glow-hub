@@ -13,6 +13,7 @@ import { Course } from '@/shared/types/course';
 import { LegacyLesson } from '@/features/courses/data/coursesData';
 import { lessonRepository } from '@/features/offline-sync/repositories/lessonRepository';
 import { DownloadCloud, Check, Trash2 } from 'lucide-react';
+import { GlowBotChatDrawer } from '@/features/ai-tutor/components/GlowBotChatDrawer';
 
 const LessonView = () => {
   const navigate = useNavigate();
@@ -203,6 +204,13 @@ const LessonView = () => {
           </div>
         </div>
       </main>
+      <GlowBotChatDrawer
+        context={{
+          subject: course?.title || 'Course Lesson',
+          gradeLevel: 7,
+          topic: lesson?.title || 'Lesson Concepts',
+        }}
+      />
       <Footer />
     </div>
   );

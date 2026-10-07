@@ -21,6 +21,9 @@ import GradebookPage from "./pages/GradebookPage";
 import InstructorPage from "./pages/InstructorPage";
 import CommunityPage from "./pages/CommunityPage";
 import AdminPage from "./pages/AdminPage";
+import MasteryPage from "./pages/MasteryPage";
+import ArenaPage from "./pages/ArenaPage";
+import AITutorPage from "./pages/AITutorPage";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -50,6 +53,12 @@ const App = () => (
               <Route path="/peer-review" element={<CommunityPage />} />
               <Route path="/admin" element={<AdminPage />} />
               <Route path="/administration" element={<AdminPage />} />
+              <Route path="/mastery" element={<MasteryPage />} />
+              <Route path="/arena" element={<ArenaPage />} />
+              <Route path="/ai-tutor" element={<AITutorPage />} />
+              <Route path="/glowbot" element={<AITutorPage />} />
+              <Route path="/curriculum-ai" element={<AITutorPage />} />
+              <Route path="/essay-evaluator" element={<AITutorPage />} />
               <Route path="/dashboard" element={<Dashboard />} />
               <Route path="/about" element={<About />} />
               <Route path="*" element={<NotFound />} />
