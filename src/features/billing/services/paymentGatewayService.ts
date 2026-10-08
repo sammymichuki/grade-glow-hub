@@ -502,14 +502,15 @@ export interface MpesaConfig {
   consumerSecret: string;
   callbackUrl: string;
 }
-
 export const SANDBOX_MPESA_CONFIG: MpesaConfig = {
-  shortcode: '174379',
-  passkey: 'REMOVED_SECRET',
-  consumerKey: 'GRADINGHUB_SANDBOX_KEY',
-  consumerSecret: 'GRADINGHUB_SANDBOX_SECRET',
+  shortcode: process.env.MPESA_SHORTCODE || '174379',
+  passkey: process.env.MPESA_PASSKEY || '',
+  consumerKey: process.env.MPESA_CONSUMER_KEY || '',
+  consumerSecret: process.env.MPESA_CONSUMER_SECRET || '',
   callbackUrl: MPESA_CALLBACK_URL,
 };
+
+
 
 /** Daraja timestamps are expressed in East Africa Time (UTC+3), independent of host TZ. */
 export function buildMpesaTimestamp(date: Date): string {

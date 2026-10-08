@@ -18,7 +18,7 @@ import {
   verifyJwt,
 } from '../services/lti13Service';
 
-const SECRET = 'REMOVED_TEST_SECRET';
+const SECRET = 'lti-test-value';
 
 describe('UTF-8 and base64url primitives', () => {
   it('round-trips UTF-8 strings including emoji and combining characters', () => {
