@@ -11,6 +11,7 @@ import "@/shared/i18n/config";
 import Index from "./pages/Index";
 import Login from "./pages/Login";
 import Register from "./pages/Register";
+import ForgotPassword from "./pages/ForgotPassword";
 import Courses from "./pages/Courses";
 import CourseView from "./pages/CourseView";
 import LessonView from './pages/LessonView';
@@ -40,6 +41,7 @@ const App = () => (
               <Route path="/" element={<Index />} />
               <Route path="/login" element={<Login />} />
               <Route path="/register" element={<Register />} />
+              <Route path="/forgot-password" element={<ForgotPassword />} />
               <Route path="/courses" element={<Courses />} />
               <Route path="/course/:courseId" element={<CourseView />} />
               <Route path="/course/:courseId/lessons/:lessonId" element={<LessonView />} />
