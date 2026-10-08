@@ -8,6 +8,8 @@ import SubjectsList from '../components/SubjectsList';
 import FeaturedCourses from '../components/FeaturedCourses';
 import WhyChooseUs from '../components/WhyChooseUs';
 import Testimonials from '../components/Testimonials';
+import FAQSection from '../components/FAQSection';
+import Newsletter from '../components/Newsletter';
 import CTASection from '../components/CTASection';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
@@ -26,6 +28,8 @@ const Index = () => {
         <FeaturedCourses />
         <WhyChooseUs />
         <Testimonials />
+        <FAQSection />
+        <Newsletter />
         <CTASection />
       </main>
       <Footer />
