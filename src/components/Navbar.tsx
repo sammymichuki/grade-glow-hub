@@ -178,10 +178,10 @@ const Navbar = () => {
   const isManagementActive = ['/instructor', '/studio', '/admin', '/administration'].some(p => location.pathname.startsWith(p));
 
   return (
-    <nav ref={navRef} className="fixed top-0 left-0 w-full z-50 bg-white/95 backdrop-blur-md shadow-sm border-b border-gray-100 py-3 transition-all duration-200">
+    <nav ref={navRef} className="fixed top-0 left-0 w-full z-50 bg-white/98 backdrop-blur supports-[backdrop-filter]:bg-white/90 shadow-sm border-b border-gray-100 py-2 transition-all duration-200">
       <div className="container-custom flex justify-between items-center">
         {/* Brand Logo */}
-        <Link to="/" className="flex items-center space-x-2.5 group">
+        <Link to="/" className="flex items-center space-x-2 group">
           <div className="h-10 w-10 rounded-xl bg-education-primary/10 flex items-center justify-center text-education-primary group-hover:bg-education-primary group-hover:text-white transition-all shadow-sm">
             <BookOpen className="h-6 w-6" />
           </div>
@@ -194,11 +194,11 @@ const Navbar = () => {
         </Link>
 
         {/* Desktop Navigation with Dropdowns */}
-        <div className="hidden lg:flex items-center space-x-1 xl:space-x-2">
+        <div className="hidden lg:flex items-center space-x-0.5 xl:space-x-1">
           {/* Direct Home Link */}
           <Link
             to="/"
-            className={`px-3 py-2 rounded-lg text-sm font-medium transition-colors ${
+            className={`px-2.5 py-1.5 rounded-lg text-sm font-medium transition-colors ${
               location.pathname === '/' ? 'text-education-primary bg-education-primary/10' : 'text-gray-700 hover:text-education-primary hover:bg-gray-50'
             }`}
           >
@@ -216,7 +216,7 @@ const Navbar = () => {
               data-nav-dropdown="academics"
               onClick={() => toggleDropdown('academics')}
               aria-expanded={openDropdown === 'academics'}
-              className={`flex items-center space-x-1.5 px-3 py-2 rounded-lg text-sm font-medium transition-colors ${
+              className={`flex items-center space-x-1.5 px-2.5 py-1.5 rounded-lg text-sm font-medium transition-colors ${
                 isAcademicsActive || openDropdown === 'academics'
                   ? 'text-education-primary bg-education-primary/10'
                   : 'text-gray-700 hover:text-education-primary hover:bg-gray-50'
@@ -228,7 +228,7 @@ const Navbar = () => {
 
             {openDropdown === 'academics' && (
               <div className="absolute top-full left-0 mt-1.5 w-80 rounded-xl bg-white shadow-xl border border-gray-100 p-2 z-50 animate-in fade-in-0 zoom-in-95 duration-150">
-                <div className="px-3 py-2 border-b border-gray-100 mb-1">
+                <div className="px-2.5 py-1.5 border-b border-gray-100 mb-1">
                   <p className="text-xs font-semibold text-gray-400 uppercase tracking-wider">{t('nav.academicsSubtitle', 'Curriculum & Progress')}</p>
                 </div>
                 {academicsItems.map(item => (
@@ -268,7 +268,7 @@ const Navbar = () => {
               data-nav-dropdown="arena"
               onClick={() => toggleDropdown('arena')}
               aria-expanded={openDropdown === 'arena'}
-              className={`flex items-center space-x-1.5 px-3 py-2 rounded-lg text-sm font-medium transition-colors ${
+              className={`flex items-center space-x-1.5 px-2.5 py-1.5 rounded-lg text-sm font-medium transition-colors ${
                 isArenaActive || openDropdown === 'arena'
                   ? 'text-education-primary bg-education-primary/10'
                   : 'text-gray-700 hover:text-education-primary hover:bg-gray-50'
@@ -280,7 +280,7 @@ const Navbar = () => {
 
             {openDropdown === 'arena' && (
               <div className="absolute top-full left-0 mt-1.5 w-80 rounded-xl bg-white shadow-xl border border-gray-100 p-2 z-50 animate-in fade-in-0 zoom-in-95 duration-150">
-                <div className="px-3 py-2 border-b border-gray-100 mb-1">
+                <div className="px-2.5 py-1.5 border-b border-gray-100 mb-1">
                   <p className="text-xs font-semibold text-gray-400 uppercase tracking-wider">{t('nav.engageSubtitle', 'Gamification & Collaboration')}</p>
                 </div>
                 {arenaItems.map(item => (
@@ -320,7 +320,7 @@ const Navbar = () => {
               data-nav-dropdown="aiHub"
               onClick={() => toggleDropdown('aiHub')}
               aria-expanded={openDropdown === 'aiHub'}
-              className={`flex items-center space-x-1.5 px-3 py-2 rounded-lg text-sm font-medium transition-colors ${
+              className={`flex items-center space-x-1.5 px-2.5 py-1.5 rounded-lg text-sm font-medium transition-colors ${
                 isAiActive || openDropdown === 'aiHub'
                   ? 'text-purple-700 bg-purple-50'
                   : 'text-gray-700 hover:text-purple-700 hover:bg-purple-50/50'
@@ -334,7 +334,7 @@ const Navbar = () => {
 
             {openDropdown === 'aiHub' && (
               <div className="absolute top-full left-0 mt-1.5 w-84 rounded-xl bg-white shadow-xl border border-gray-100 p-2 z-50 animate-in fade-in-0 zoom-in-95 duration-150">
-                <div className="px-3 py-2 border-b border-gray-100 mb-1 flex items-center justify-between">
+                <div className="px-2.5 py-1.5 border-b border-gray-100 mb-1 flex items-center justify-between">
                   <p className="text-xs font-semibold text-purple-700 uppercase tracking-wider">{t('nav.aiHubSubtitle', 'GlowBot Intelligence Lab')}</p>
                   <span className="text-[10px] font-semibold bg-purple-100 text-purple-700 px-2 py-0.5 rounded-full">Socratic AI</span>
                 </div>
@@ -375,7 +375,7 @@ const Navbar = () => {
               data-nav-dropdown="management"
               onClick={() => toggleDropdown('management')}
               aria-expanded={openDropdown === 'management'}
-              className={`flex items-center space-x-1.5 px-3 py-2 rounded-lg text-sm font-medium transition-colors ${
+              className={`flex items-center space-x-1.5 px-2.5 py-1.5 rounded-lg text-sm font-medium transition-colors ${
                 isManagementActive || openDropdown === 'management'
                   ? 'text-education-primary bg-education-primary/10'
                   : 'text-gray-700 hover:text-education-primary hover:bg-gray-50'
@@ -387,7 +387,7 @@ const Navbar = () => {
 
             {openDropdown === 'management' && (
               <div className="absolute top-full left-0 mt-1.5 w-80 rounded-xl bg-white shadow-xl border border-gray-100 p-2 z-50 animate-in fade-in-0 zoom-in-95 duration-150">
-                <div className="px-3 py-2 border-b border-gray-100 mb-1">
+                <div className="px-2.5 py-1.5 border-b border-gray-100 mb-1">
                   <p className="text-xs font-semibold text-gray-400 uppercase tracking-wider">{t('nav.managementSubtitle', 'Administration & Teaching')}</p>
                 </div>
                 {managementItems.map(item => (
@@ -419,7 +419,7 @@ const Navbar = () => {
           {/* About Link */}
           <Link
             to="/about"
-            className={`px-3 py-2 rounded-lg text-sm font-medium transition-colors ${
+            className={`px-2.5 py-1.5 rounded-lg text-sm font-medium transition-colors ${
               location.pathname === '/about' ? 'text-education-primary bg-education-primary/10' : 'text-gray-700 hover:text-education-primary hover:bg-gray-50'
             }`}
           >
@@ -428,7 +428,7 @@ const Navbar = () => {
         </div>
 
         {/* Right Section: Utility Tools & Auth */}
-        <div className="hidden lg:flex items-center space-x-2.5">
+        <div className="hidden lg:flex items-center space-x-2">
           <OfflineIndicator />
           <LanguageSwitcher />
           <NotificationCenter />
@@ -485,7 +485,7 @@ const Navbar = () => {
             {/* Quick Home Link */}
             <Link
               to="/"
-              className="flex items-center space-x-2 px-3 py-2 rounded-lg font-medium text-gray-800 hover:bg-gray-50"
+              className="flex items-center space-x-2 px-2.5 py-1.5 rounded-lg font-medium text-gray-800 hover:bg-gray-50"
               onClick={() => setIsMobileMenuOpen(false)}
             >
               <span>{t('nav.home')}</span>
@@ -643,7 +643,7 @@ const Navbar = () => {
             {/* Mobile About Link */}
             <Link
               to="/about"
-              className="flex items-center space-x-2 px-3 py-2 rounded-lg font-medium text-gray-800 hover:bg-gray-50"
+              className="flex items-center space-x-2 px-2.5 py-1.5 rounded-lg font-medium text-gray-800 hover:bg-gray-50"
               onClick={() => setIsMobileMenuOpen(false)}
             >
               <Info className="h-4 w-4 text-gray-500" />
