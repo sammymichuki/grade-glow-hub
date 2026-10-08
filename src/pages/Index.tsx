@@ -1,6 +1,7 @@
 
 import HeroSection from '../components/HeroSection';
 import Stats from '../components/Stats';
+import TrustStrip from '../components/TrustStrip';
 import Features from '../components/Features';
 import SubjectsList from '../components/SubjectsList';
 import FeaturedCourses from '../components/FeaturedCourses';
