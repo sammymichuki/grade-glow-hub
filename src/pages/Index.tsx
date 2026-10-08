@@ -2,6 +2,7 @@
 import HeroSection from '../components/HeroSection';
 import Stats from '../components/Stats';
 import TrustStrip from '../components/TrustStrip';
+import HowItWorks from '../components/HowItWorks';
 import Features from '../components/Features';
 import SubjectsList from '../components/SubjectsList';
 import FeaturedCourses from '../components/FeaturedCourses';
@@ -17,6 +18,8 @@ const Index = () => {
       <Navbar />
       <main className="flex-grow">
         <HeroSection />
+        <TrustStrip />
+        <HowItWorks />
         <Stats />
         <Features />
         <SubjectsList />
