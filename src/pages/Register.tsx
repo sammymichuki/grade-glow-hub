@@ -48,17 +48,17 @@ const Register = () => {
       await register(formData.email, formData.password, formData.name);
       toast.success("Account created successfully! Please log in to continue.");
       navigate('/login');
-    } catch (error: any) {
-      // Better error handling for Firebase errors
-      let errorMessage = "Failed to create account";
-      
-      if (error.message.includes('email-already-in-use')) {
+    } catch (error: unknown) {
+      const message = error instanceof Error ? error.message : String(error);
+      let errorMessage = "Failed to create account.";
+     
+      if (message.includes('email-already-in-use')) {
         errorMessage = "An account with this email already exists.";
-      } else if (error.message.includes('weak-password')) {
+      } else if (message.includes('weak-password')) {
         errorMessage = "Password is too weak. Please choose a stronger password.";
-      } else if (error.message.includes('invalid-email')) {
+      } else if (message.includes('invalid-email')) {
         errorMessage = "Invalid email address.";
-      } else if (error.message.includes('api-key-not-valid') || error.message.includes('invalid-api-key') || error.message.includes('API key')) {
+      } else if (message.includes('api-key-not-valid') || message.includes('invalid-api-key') || message.includes('API key')) {
         errorMessage = "Firebase credentials not configured. Please set your Firebase keys in .env";
       }
       

@@ -36,7 +36,7 @@ export interface OfflineProgress {
 export interface SyncQueueItem {
   id: string;
   type: SyncActionType;
-  payload: Record<string, any>;
+  payload: Record<string, unknown>;
   status: SyncItemStatus;
   retryCount: number;
   createdAt: number;

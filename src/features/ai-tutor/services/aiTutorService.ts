@@ -95,7 +95,7 @@ export class AiTutorService {
     let content = '';
     let quickPrompts: string[] = [];
     let suggestedSteps: string[] = [];
-    let conceptTags: string[] = [context.subject, context.topic];
+    const conceptTags: string[] = [context.subject, context.topic];
 
     if (safety.category === 'off_topic') {
       content = `🎮 That sounds like fun during break time! But right now in **${context.subject}**, let's conquer **${context.topic}**. Where are you stuck on this assignment?`;

@@ -35,20 +35,20 @@ const Login = () => {
       await login(formData.email, formData.password);
       toast.success("Successfully logged in!");
       navigate('/dashboard');
-    } catch (error: any) {
-      // Better error handling for Firebase errors
-      let errorMessage = "Failed to login. Please check your credentials.";
-      
-      if (error.message.includes('user-not-found')) {
+    }catch (error: unknown) {
+        const message = error instanceof Error ? error.message : String(error);
+        let errorMessage = "Failed to login. Please check your credentials.";
+   
+      if (message.includes('user-not-found')) {
         errorMessage = "No account found with this email address.";
-      } else if (error.message.includes('wrong-password')) {
+      } else if (message.includes('wrong-password')) {
         errorMessage = "Incorrect password.";
-      } else if (error.message.includes('invalid-email')) {
+      } else if (message.includes('invalid-email')) {
         errorMessage = "Invalid email address.";
-      } else if (error.message.includes('too-many-requests')) {
+      } else if (message.includes('too-many-requests')) {
         errorMessage = "Too many failed attempts. Please try again later.";
-      } else if (error.message.includes('api-key-not-valid') || error.message.includes('invalid-api-key') || error.message.includes('API key')) {
-        errorMessage = "Firebase credentials not configured. Please set your Firebase keys in .env";
+      } else if (message.includes('api-key-not-valid') || message.includes('invalid-api-key') || message.includes('API key')) {
+        errorMessage = "Firebase credentials not configured. Please wait for your developer to fix this issue.";
       }
       
       toast.error(errorMessage);

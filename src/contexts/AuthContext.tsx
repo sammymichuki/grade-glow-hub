@@ -56,8 +56,10 @@ export const AuthProvider = ({ children }: { children: ReactNode }) => {
     try {
       await signInWithEmailAndPassword(auth, email, password);
       // User state will be updated by onAuthStateChanged
-    } catch (error: any) {
-      throw new Error(error.message);
+    } catch (error: unknown) {
+      throw new Error(
+      error instanceof Error ? error.message : String(error)
+     );
     }
   };
 
@@ -74,16 +76,20 @@ export const AuthProvider = ({ children }: { children: ReactNode }) => {
       // so they need to log in manually
       await signOut(auth);
       
-    } catch (error: any) {
-      throw new Error(error.message);
+    } catch (error: unknown) {
+      throw new Error(
+        error instanceof Error ? error.message : String(error)
+      );
     }
   };
 
   const forgotPassword = async (email: string) => {
     try {
       await sendPasswordResetEmail(auth, email);
-    } catch (error: any) {
-      throw new Error(error.message);
+    } catch (error: unknown) {
+      throw new Error(
+        error instanceof Error ? error.message : String(error)
+      );
     }
   };
 
@@ -91,8 +97,10 @@ export const AuthProvider = ({ children }: { children: ReactNode }) => {
     try {
       await signOut(auth);
       // User state will be updated by onAuthStateChanged
-    } catch (error: any) {
-      throw new Error(error.message);
+    } catch (error: unknown) {
+      throw new Error(
+        error instanceof Error ? error.message : String(error)
+      );
     }
   };
 

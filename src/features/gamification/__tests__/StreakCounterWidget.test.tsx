@@ -1,4 +1,5 @@
-import { describe, it, expect, beforeEach } from 'vitest';
+
+import { describe, it, expect, beforeEach, afterEach, vi } from 'vitest';
 import { render, screen, fireEvent } from '@testing-library/react';
 import { StreakCounterWidget } from '../components/StreakCounterWidget';
 import { gamificationService } from '../services/gamificationService';
@@ -18,13 +19,21 @@ describe('StreakCounterWidget Component', () => {
   });
 
   it('records study session and triggers feedback message', () => {
+    const yesterday = new Date();
+    yesterday.setDate(yesterday.getDate() - 1);
+    const yesterdayStr = yesterday.toISOString().split('T')[0];
+
+    gamificationService.resetToDefaults();
+    gamificationService.recordDailyActivity(yesterdayStr, 0);
+
     render(<StreakCounterWidget />);
 
     const recordBtn = screen.getByRole('button', { name: /Record Study Session/i });
     fireEvent.click(recordBtn);
 
     expect(screen.getByText(/Daily streak continued/i)).toBeInTheDocument();
-  });
+    });
+
 
   it('allows purchasing streak freeze if available', () => {
     render(<StreakCounterWidget />);

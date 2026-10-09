@@ -13,7 +13,7 @@ export interface TelemetryEvent {
   level: TelemetryLogLevel;
   eventName: string;
   category: TelemetryCategory;
-  details: Record<string, any>;
+  details: Record<string, unknown>;
   timestamp: number;
   synced: boolean;
 }
@@ -22,7 +22,7 @@ export interface PerformanceMetric {
   name: string;
   durationMs: number;
   timestamp: number;
-  metadata?: Record<string, any>;
+  metadata?: Record<string, unknown>;
 }
 
 export interface ErrorReport {

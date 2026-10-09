@@ -137,8 +137,10 @@ export const CourseBuilderStudio: React.FC = () => {
 
     setDraft((prev) => ({ ...prev, modules: updatedModules }));
   };
-
-  const handleUpdateSelectedLesson = (field: keyof CurriculumLesson, value: any) => {
+    const handleUpdateSelectedLesson = <K extends keyof CurriculumLesson,>(
+    field: K,
+    value: CurriculumLesson[K]
+  ) => {
     if (!selectedLesson) return;
 
     const updated = { ...selectedLesson, [field]: value };

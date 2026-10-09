@@ -27,7 +27,7 @@ export class SyncQueueService {
     return this.isOnlineStatus;
   }
 
-  public async setOnlineStatus(online: boolean): Promise<any> {
+  public async setOnlineStatus(online: boolean): Promise<unknown> {
     this.isOnlineStatus = online;
     await this.notifyListeners();
     if (online) {
@@ -88,7 +88,7 @@ export class SyncQueueService {
     return this.database.syncQueue.orderBy('createdAt').reverse().toArray();
   }
 
-  async enqueueAction(type: SyncActionType, payload: Record<string, any>): Promise<string> {
+  async enqueueAction(type: SyncActionType, payload: Record<string, unknown>): Promise<string> {
     const id = `sync_${Date.now()}_${Math.random().toString(36).substring(2, 9)}`;
     const item: SyncQueueItem = {
       id,
@@ -181,13 +181,14 @@ export class SyncQueueService {
           }
 
           succeeded++;
-        } catch (err: any) {
+        } catch (err: unknown) {
           failed++;
           const nextRetry = item.retryCount + 1;
           await this.database.syncQueue.update(item.id, {
             status: nextRetry >= this.maxRetries ? 'failed' : 'pending',
             retryCount: nextRetry,
-            errorMessage: err?.message || 'Sync operation failed',
+            errorMessage: err instanceof Error ? err.message : 'Sync operation failed',
+          
           });
         }
       }

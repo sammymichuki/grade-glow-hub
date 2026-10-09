@@ -10,7 +10,7 @@ export class TelemetryService {
     level: TelemetryLogLevel,
     eventName: string,
     category: TelemetryCategory,
-    details: Record<string, any> = {}
+    details: Record<string, unknown> = {}
   ): Promise<TelemetryEvent> {
     const event: TelemetryEvent = {
       id: `tel_${Date.now()}_${Math.random().toString(36).substring(2, 7)}`,
@@ -40,34 +40,36 @@ export class TelemetryService {
     return event;
   }
 
-  logInfo(eventName: string, category: TelemetryCategory = 'navigation', details: Record<string, any> = {}) {
+  logInfo(eventName: string, category: TelemetryCategory = 'navigation', details: Record<string, unknown> = {}) {
     return this.log('info', eventName, category, details);
   }
 
-  logWarn(eventName: string, category: TelemetryCategory = 'sync', details: Record<string, any> = {}) {
+  logWarn(eventName: string, category: TelemetryCategory = 'sync', details: Record<string, unknown> = {}) {
     return this.log('warn', eventName, category, details);
   }
 
   logError(
     eventName: string,
     category: TelemetryCategory = 'error',
-    errorOrDetails: any = {}
+    errorOrDetails: unknown = {}
   ) {
-    const details = errorOrDetails instanceof Error
+    const details: Record<string, unknown> =
+      errorOrDetails instanceof Error
       ? {
           message: errorOrDetails.message,
           stack: errorOrDetails.stack,
           name: errorOrDetails.name,
         }
-      : errorOrDetails;
-
+      : typeof errorOrDetails === 'object' && errorOrDetails !== null
+        ? errorOrDetails as Record<string, unknown>
+        : { value: errorOrDetails };
     return this.log('error', eventName, category, details);
   }
 
   startTimer(metricName: string) {
     const startTime = performance.now();
     return {
-      stop: (metadata: Record<string, any> = {}) => {
+      stop: (metadata: Record<string, unknown> = {}) => {
         const durationMs = Math.round(performance.now() - startTime);
         const metric: PerformanceMetric = {
           name: metricName,
